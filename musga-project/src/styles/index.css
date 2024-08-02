@@ -9,8 +9,66 @@ body {
 }
 
 .scrollA::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: #313131;
   border-radius: 10rem;
+}
+
+.custom-modal .ant-modal {
+  position: fixed; /* Garante que o modal fique fixo na tela */
+  top: 0; /* Posiciona o modal no topo da tela */
+  left: 0; /* Posiciona o modal no canto esquerdo da tela */
+  margin: 0; /* Remove as margens padrão do modal */
+  padding: 0; /* Remove o padding padrão do modal */
+  overflow: hidden; /* Garante que não haja barras de rolagem */
+  background-color: transparent; /* Torna o fundo do modal transparente */
+}
+
+.custom-modal .ant-modal-content {
+  position: fixed;
+  width: 80vw; /* Faz o modal cobrir 50% da largura da tela */
+  height: 100vh;
+  background-color: #0A0A0A; /* Define o fundo azul para o conteúdo do modal */
+  border-radius: 0; /* Remove os arredondamentos das bordas, se necessário */
+  box-shadow: none; /* Remove a sombra padrão do modal */
+  margin: 0;
+  margin-top: -105px;
+  margin-left: -8px;
+  padding: 10px;
+}
+
+.custom-modal .ant-modal-header {
+  display: none; /* Oculta o cabeçalho do modal se necessário */
+}
+
+.custom-modal .ant-modal-body {
+  height: 100%; /* Garante que o corpo do modal cubra toda a altura */
+  overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+}
+
+.modal-2 .ant-modal2 {
+  position: fixed; /* Garante que o modal fique fixo na tela */
+  top: 0; /* Posiciona o modal no topo da tela */
+  left: 0; /* Posiciona o modal no canto esquerdo da tela */
+  margin: 0; /* Remove as margens padrão do modal */
+  padding: 0; /* Remove o padding padrão do modal */
+  overflow: hidden; /* Garante que não haja barras de rolagem */
+  background-color: transparent; /* Torna o fundo do modal transparente */
+}
+
+.modal-2 .ant-modal-content2 {
+  position: fixed;
+  background-color: #eb0a0a; /* Define o fundo azul para o conteúdo do modal */
+  border-radius: 0; /* Remove os arredondamentos das bordas, se necessário */
+  box-shadow: none; /* Remove a sombra padrão do modal */
+}
+
+.modal-2 .ant-modal-header2 {
+  display: none; /* Oculta o cabeçalho do modal se necessário */
+}
+
+.modal-2 .ant-modal-body2 {
+  height: 100%; /* Garante que o corpo do modal cubra toda a altura */
+  overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
 }
 
 @tailwind base;

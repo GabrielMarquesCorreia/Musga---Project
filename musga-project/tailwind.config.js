@@ -17,14 +17,17 @@ module.exports = {
         gray8: "#0A0A0A",
         gray9: "#AFAFAF",
         gray10: "#9E9E9E",
-        bgBlue: "#096DA5",
-        bgPurple: "#21029F",
+        bgBlack: "#030303",
         bgGray: "#324357",
         opBg: "#543A03",
         opBg2: "#0B030A",
       },
       backgroundImage: {
-        'phone-1': "url('../public/images/background-1.jpg')"
+        'phone-1': "url('../public/images/background-1.jpg')",
+        'tablet-1': "url('../public/images/tablet.jpg')",
+        'desktop-1': "url('../public/images/desktop-1.png')",
+        'desktop-2': "url('../public/images/desktop-2.png')",
+        'desktop-3': "url('../public/images/desktop-3.jpg')",
       },
       spacing: {
         '27': '27rem',
@@ -43,6 +46,7 @@ module.exports = {
         '59': '78.4rem',
         '81': '20.5rem',
         '82': '28.3rem',
+        '99': '90.6vw',
         '100': '93.8vw',
         '102': '84vh',
         '105': '105vh',
