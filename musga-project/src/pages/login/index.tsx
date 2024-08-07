@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="bg-phone-1 md:bg-tablet-1 lg:bg-desktop-1 xl:bg-desktop-2 xxl:bg-desktop-3 bg-no-repeat h-screen fixed w-screen">
+    <div>
       <div className="bg-black h-screen bg-opacity-35 md:bg-opacity-55 p-5">
         {/* Header - Inicio */}
         <div className="flex justify-center">

@@ -7,6 +7,7 @@ import { GiGuitar, GiMusicalKeyboard, GiViolin } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
 import { LiaMicrophoneAltSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [isFirstModalVisible, setIsFirstModalVisible] = useState(false);
@@ -19,9 +20,9 @@ function Home() {
 
   return (
     <div className="">
-      <div className="bg-phone-1 md:bg-tablet-1 lg:bg-desktop-1 xl:bg-desktop-2 xxl:bg-desktop-3 bg-no-repeat w-full h-screen bg-fixed bg-cover overflow-x-hidden">
+      <div className="">
         {/* Header - Inicio */}
-        <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-52 lg:gap-32">
+        <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-52 lg:gap-32 xl:gap-52 xxl:gap-19">
           <div className="flex items-center md:hidden">
             <button onClick={showSecondModal}>
               <UnorderedListOutlined className="text-5xl font-bold" />
@@ -32,10 +33,10 @@ function Home() {
             <img
               src="../public/images/logo.png"
               alt="Logo"
-              className="w-40 md:w-44 xl:w-96 flex"
+              className="w-40 md:w-44 xl:w-40 flex "
             />
           </div>
-          <div className="sm:hidden lg:flex gap-5 items-center">
+          <div className="sm:hidden lg:flex gap-5 items-center xl:gap-8 cursor-pointer">
             <a
               href="#"
               className="text-white font-bold border-b-white border-b-solid border-b-[2px] text-xl"
@@ -46,7 +47,7 @@ function Home() {
               Perfil
             </a>
             <div className="flex items-center gap-1" onClick={showFirstModal}>
-              <p className="text-white text-xl">Gênero</p>
+              <p className="text-white text-xl">Gêneros</p>
               <IoIosArrowDown className="text-white text-2xl" />
             </div>
             <Modal
@@ -54,9 +55,46 @@ function Home() {
               onCancel={hideFirstModal}
               footer={null}
               closable={false}
-              className="modal-2 sm:hidden lg:flex"
+              className="custom-modal flex ml-[22rem] xl:ml-[29rem] xxl:ml-[36rem]"
               bodyStyle={{ padding: 0, margin: 0 }}
-            ></Modal>
+            >
+              <div className="flex gap-8 justify-center xl:gap-16">
+                <div className="flex flex-col gap-2">
+                  <Link
+                    to="../rock"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Rock
+                  </Link>
+                  <a
+                    href="#"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Pop
+                  </a>
+                  <a
+                    href="#"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Eletronic
+                  </a>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="#"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Rap
+                  </a>
+                  <a
+                    href="#"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Classic
+                  </a>
+                </div>
+              </div>
+            </Modal>
           </div>
           <div className="hidden items-center gap-7 md:flex">
             <a href="#" className=" flex items-center gap-5 lg:hidden">
@@ -65,7 +103,7 @@ function Home() {
             <div className="flex items-center gap-3">
               <SearchOutlined className="text-4xl" />
               <Input
-                className="bg-transparent placeholder:text-white placeholder:text-lg border-white border-solid border-[1px] rounded-xl w-72"
+                className="bg-transparent placeholder:text-white placeholder:text-lg border-white border-solid border-[1px] rounded-xl w-72 xl:w-82 xxl:w-30"
                 placeholder="Pesquisar"
               />
             </div>
@@ -111,7 +149,7 @@ function Home() {
         {/* Menu - End */}
 
         {/* Content - Start */}
-        <div className="bg-black bg-opacity-40 bg-no-repeat bg-fixed bg-cover min-h-screen w-full p-4">
+        <div className="bg-black bg-opacity-55 bg-no-repeat bg-fixed bg-cover md:h-194 lg:h-114 w-full p-4 mb-3 md:mb-0">
           {/* Search - Start */}
           <div className="pb-7 flex items-center gap-3 md:hidden">
             <SearchOutlined className="text-4xl" />
@@ -124,20 +162,20 @@ function Home() {
           {/* Search - End */}
 
           {/* Genders - Start */}
-          <div className="-mt-3 w-99 md:flex items-center gap-16 justify-end md:w-full">
+          <div className="-mt-3 w-99 md:flex items-center gap-16 justify-end md:w-full lg:hidden ">
             <h1 className="font-semibold text-3xl">Gêneros</h1>
-            <div className="md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
+            <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
                   <div className="flex pt-4 gap-5">
                     {/* Rock - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-2 text-center active:bg-white active:border-black active:text-black">
-                      <a href="#">
+                      <Link to="../rock">
                         <div className="flex justify-center ">
                           <GiGuitar className="text-white text-5xl active:text-black" />
                         </div>
                         <p className="font-bold text-2xl">Rock</p>
-                      </a>
+                      </Link>
                     </div>
                     {/* Rock - End */}
 
@@ -192,13 +230,13 @@ function Home() {
           {/* Genders - End */}
 
           {/* Historic - Start */}
-          <div className="mt-6 w-99 md:w-full">
+          <div className="scrollA mt-5 lg:mt-0 w-99 md:w-full ">
             <h1 className="font-semibold text-2xl md:text-3xl">
               Ouvidas Recentemente
             </h1>
-            <div className="md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg md:w-full">
-              <div className="flex w-100 md:w-full">
-                <div className="flex gap-3 w-39 md:w-full">
+            <div className=" scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg md:w-full xl:max-w-screen-xxl">
+              <div className="flex w-100 md:w-full ">
+                <div className="flex gap-3 w-39 md:w-full ">
                   {/*Musics - Start */}
                   <div className="flex pt-4 gap-5">
                     {/* First Music - Start */}
@@ -310,6 +348,27 @@ function Home() {
                     <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                       <div className="flex-col justify-center items-center text-center">
                         <a
+                          href="https://www.youtube.com/watch?v=oRArmtMA9AI"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/fly.png"
+                            alt="Fly"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Fly - <br />
+                            Marshmello
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Sixth Music - End */}
+
+                    {/* Seventh Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
                           href="https://www.youtube.com/watch?v=ktvTqknDobU"
                           className="flex-col justify-center items-center text-center"
                         >
@@ -325,7 +384,176 @@ function Home() {
                         </a>
                       </div>
                     </div>
-                    {/* Sixth Music - End */}
+                    {/* Seventh Music - End */}
+
+                    {/* Eigth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=fXw0jcYbqdo"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/moon.jpg"
+                            alt="Talking to the moon"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                            Talking to the moon - <br />
+                            Buno Mars
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eigth Music - End */}
+
+                    {/* Nineth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=eyn-kjPgMY0"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/punpun.png"
+                            alt="Goodnight"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Goodnight - <br />
+                            Shaman
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Nineth Music - End */}
+
+                    {/* Tenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=k5mX3NkA7jM"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/maryon.jpg"
+                            alt="Maryon"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Mary on a cross - <br />
+                            Ghost
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Tenth Music - End */}
+
+                    {/* Eleventh Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=L7mfjvdnPno"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/falling.jpg"
+                            alt="Falling"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Falling - <br />
+                            Trevor Daniel
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eleventh Music - End */}
+
+                    {/* Twenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=GjVoB8zQQ6o"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/overthegardenwall.jpg"
+                            alt="Over the garden wall"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Calm Over the
+                            <br />
+                            garden Wall songs
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Twenth Music - End */}
+
+                    {/* Thirteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=JGwWNGJdvx8"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/shapeofyou.jpg"
+                            alt="Shape of you"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Shape of you - <br />
+                            Ed Sheeran
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Thirteenth Music - End */}
+
+                    {/* Fourteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=GjVoB8zQQ6o"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/congratulations.jpg"
+                            alt="Congratulations"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                            Congratulations - <br />
+                            Post Malone Ft.Quavo
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fourteenth Music - End */}
+
+                    {/* Fifteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=GjVoB8zQQ6o"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/subemelaradio.jpg"
+                            alt="Subeme la radio"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Subeme la radio - <br />
+                            Enrique Iglesias
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fifteenth Music - End */}
                   </div>
                   {/*Musics - End */}
                 </div>
@@ -337,7 +565,7 @@ function Home() {
           {/* Comming Soon - Start */}
           <div className="mt-6 w-99 md:w-full">
             <h1 className="font-semibold text-3xl">Lançamentos</h1>
-            <div className="md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
+            <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg xl:max-w-screen-xxl">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
                   {/*Musics - Start */}
@@ -486,6 +714,177 @@ function Home() {
                       </div>
                     </div>
                     {/* Seventh Music - End */}
+
+                    {/* Eigth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=aLEhh_XpJ-0"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/saysaysay.png"
+                            alt="Say Say Say..."
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                            Say Say Say - <br />
+                            Michael Jackson and
+                            <br /> Paul MacCartney
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eigth Music - End */}
+
+                    {/* Nineth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=Y7ix6RITXM0"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/maps.jpg"
+                            alt="Maps"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Maps - <br />
+                            Maroon 5
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Nineth Music - End */}
+
+                    {/* Tenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=8CdcCD5V-d8"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/venom.jpg"
+                            alt="Venom"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Venom - <br />
+                            Eminem
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Tenth Music - End */}
+
+                    {/* Eleventh Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=gb4c9c4Z_Qc"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/hero.jpg"
+                            alt="The joy and the sorrow"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                            The joy and the sorrow - <br />
+                            Johannes Bornlof
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eleventh Music - End */}
+
+                    {/* Twenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=btPJPFnesV4"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/eyeofthetiger.jpg"
+                            alt="Falling"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Eye of the tiger - <br />
+                            Survivor
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Twenth Music - End */}
+
+                    {/*  Thirteenth Music - Start  */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=btPJPFnesV4"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/diasdeluta.jpg"
+                            alt="Dias de luta dias de glória"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                            Dias de luta dias
+                            <br />
+                            de glória - <br />
+                            Charlie Brown Jr
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Thirteenth Music - End */}
+
+                    {/* Fourteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=fKopy74weus"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/thunder.jpg"
+                            alt="Thunder"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Thunder - <br />
+                            Imagine Dragons
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fourteenth Music - End */}
+
+                    {/* Fifteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=Aiay8I5IPB8"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/howyouremindme.jpg"
+                            alt="How you remind me"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                            How you remind me - <br />
+                            Nickelback
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fifteenth Music - End */}
                   </div>
                   {/*Musics - End */}
                 </div>
@@ -497,7 +896,7 @@ function Home() {
           {/* Top Hits - Start */}
           <div className="mt-6 w-99 md:w-full">
             <h1 className="font-semibold text-3xl">Top 10 do mês</h1>
-            <div className="md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
+            <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg xl:max-w-screen-xxl">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
                   {/*Musics - Start */}
@@ -506,7 +905,7 @@ function Home() {
                     <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                       <div className="flex-col justify-center items-center text-center">
                         <a
-                          href="https://www.youtube.com/watch?v=WuenyQ4NCQE"
+                          href="https://www.youtube.com/watch?v=9sg-A-eS6Ig"
                           className="flex-col justify-center items-center text-center"
                         >
                           <img
@@ -718,7 +1117,7 @@ function Home() {
           {/* For You - Start */}
           <div className="mt-6 w-99 md:w-full">
             <h1 className="font-semibold text-3xl">Recomendadas</h1>
-            <div className="md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
+            <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg xl:max-w-screen-xxl">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
                   {/*Musics - Start */}
@@ -843,6 +1242,196 @@ function Home() {
                       </div>
                     </div>
                     {/* Sixth Music - End */}
+
+                    {/* Seventh Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=izGwDsrQ1eQ"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/deadpool.jpg"
+                            alt="Careless Whisper"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Careless Whisper - <br />
+                            George Michael
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Seventh Music - End */}
+
+                    {/* Eigth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=E0ozmU9cJDg"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/master.jpg"
+                            alt="Master of puppets"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Master of puppets - <br />
+                            Metalica
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eigth Music - End */}
+
+                    {/* Nineth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=E0ozmU9cJDg"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/nirvana.jpg"
+                            alt="Smells like spirit"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Smells like spirit - <br />
+                            Metalica
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Nineth - End */}
+
+                    {/* Tenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=ZbZSe6N_BXs"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/happy.jpg"
+                            alt="Happy"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Happy - <br />
+                            Pharrell Williams
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Tenth - End */}
+
+                    {/* Eleventh Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=1y6smkh6c-0"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/dontworrychild.jpg"
+                            alt="Don't worry child"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                            Don't worry child - <br />
+                            Swedish House Mafia
+                            <br />
+                            ft. John Martin
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Eleventh Music - End */}
+
+                    {/* Twenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=JWA5hJl4Dv0"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/bombapatch.jpg"
+                            alt="Bomba Patch"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-1">
+                            Don't matter - <br />
+                            Akon
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Twenth Music - End */}
+
+                    {/*  Thirteenth Music - Start  */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=kPBzTxZQG5Q"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/herewithoutyou.jpg"
+                            alt="Here without you"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                            Here without you - <br />3 Doors Down
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Thirteenth Music - End */}
+
+                    {/* Fourteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=9BMwcO6_hyA"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/always.png"
+                            alt="Always"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold text-lg">
+                            Always - <br />
+                            Bon Jovi
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fourteenth Music - End */}
+
+                    {/* Fifteenth Music - Start */}
+                    <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                      <div className="flex-col justify-center items-center text-center">
+                        <a
+                          href="https://www.youtube.com/watch?v=Aiay8I5IPB8"
+                          className="flex-col justify-center items-center text-center"
+                        >
+                          <img
+                            src="../public/images/myordinarylife.png"
+                            alt="My ordinary life"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                          />
+                          <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                            My ordinary life - <br />
+                            The Living Tombonstone
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Fifteenth Music - End */}
                   </div>
                   {/*Musics - End */}
                 </div>
@@ -854,36 +1443,32 @@ function Home() {
         {/* Content - End */}
 
         {/* Footer - Start */}
-        <div className="w-screen h-36 md:h-32 bg-gray8 md:mt-3 md:flex md:items-center md:justify-end">
-          <footer className="pt-2 md:p-4 md:pt-0 pl-5 pr-5 md:flex md:items-center md:gap-[4rem]">
+        <div className="w-screen h-36 md:h-36 bg-gray8  md:flex md:items-center md:justify-end xxl:justify-start">
+          <footer className="pt-2 md:p-4 md:pt-0 pl-5 pr-5 md:flex md:items-center md:gap-[4rem] lg:gap-[7.08rem] xl:gap-5 xxl:gap-8">
             <img
               src="../public/images/logo.png"
               alt="Logo"
-              className="w-24 md:w-52 flex "
+              className="w-24 md:w-52 lg:w-56 xl:w-52 flex"
             />
-            <div className="md:flex-col">
-              <div className="mt-2">
-                <a
-                  href="https://github.com/GabrielMarquesCorreia/Musga---Project"
-                  className="flex items-center"
-                >
-                  <FaGithub className="text-2xl md:text-5xl mr-3" />
-                  <p className="text-xs md:text-sm pt-1">
-                    https://github.com/GabrielMarquesCorreia/Musga---Project
-                  </p>
-                </a>
-              </div>
-              <div className="mt-2">
-                <a
-                  href="https://www.linkedin.com/in/gabriel-marques-correia-077949232/"
-                  className="flex items-center"
-                >
-                  <FaLinkedin className="text-2xl md:text-5xl mr-3" />
-                  <p className="text-xs md:text-sm pt-1">
-                    https://www.linkedin.com/in/gabriel-marques-correia-077949232/
-                  </p>
-                </a>
-              </div>
+            <div className="md:flex-col md:flex md:mt-4 md:gap-3 xl:flex-row xxl:gap-12">
+              <a
+                href="https://github.com/GabrielMarquesCorreia/Musga---Project"
+                className="flex items-center"
+              >
+                <FaGithub className="text-2xl md:text-5xl mr-3 lg:mr-6" />
+                <p className="text-xs md:text-sm lg:text-xl pt-1">
+                  https://github.com/GabrielMarquesCorreia/Musga---Project
+                </p>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gabriel-marques-correia-077949232/"
+                className="flex items-center"
+              >
+                <FaLinkedin className="text-2xl md:text-5xl mr-3 lg:mr-6" />
+                <p className="text-xs md:text-sm lg:text-xl pt-1">
+                  https://www.linkedin.com/in/gabriel-marques-correia-077949232/
+                </p>
+              </a>
             </div>
           </footer>
         </div>
