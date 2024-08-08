@@ -2,8 +2,9 @@ import { SearchOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { Input, Modal } from "antd";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
-import { FaGithub, FaLinkedin, FaMusic } from "react-icons/fa";
-import { GiGuitar, GiMusicalKeyboard, GiViolin } from "react-icons/gi";
+import { FaMusic } from "react-icons/fa";
+// import { FaMusic } from "react-icons/fa";
+import { GiGuitar, GiMusicalKeyboard } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
 import { LiaMicrophoneAltSolid } from "react-icons/lia";
@@ -22,7 +23,7 @@ function Home() {
     <div className="">
       <div className="">
         {/* Header - Inicio */}
-        <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-52 lg:gap-32 xl:gap-52 xxl:gap-19">
+        <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
           <div className="flex items-center md:hidden">
             <button onClick={showSecondModal}>
               <UnorderedListOutlined className="text-5xl font-bold" />
@@ -33,20 +34,20 @@ function Home() {
             <img
               src="../public/images/logo.png"
               alt="Logo"
-              className="w-40 md:w-44 xl:w-40 flex "
+              className="w-40 md:w-52 xl:w-40 flex "
             />
           </div>
-          <div className="sm:hidden lg:flex gap-5 items-center xl:gap-8 cursor-pointer">
-            <a
-              href="#"
-              className="text-white font-bold border-b-white border-b-solid border-b-[2px] text-xl"
-            >
+          <div className="sm:hidden md:flex gap-5 items-center xl:gap-8 cursor-pointer">
+            <Link to="../home" className="text-white text-xl">
               Home
-            </a>
+            </Link>
             <a href="#" className="text-white text-xl">
               Perfil
             </a>
-            <div className="flex items-center gap-1" onClick={showFirstModal}>
+            <div
+              className="lg:flex items-center gap-1 md:hidden"
+              onClick={showFirstModal}
+            >
               <p className="text-white text-xl">Gêneros</p>
               <IoIosArrowDown className="text-white text-2xl" />
             </div>
@@ -66,12 +67,12 @@ function Home() {
                   >
                     Rock
                   </Link>
-                  <a
-                    href="#"
+                  <Link
+                    to="../pop"
                     className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                   >
                     Pop
-                  </a>
+                  </Link>
                   <a
                     href="#"
                     className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
@@ -86,20 +87,11 @@ function Home() {
                   >
                     Rap
                   </a>
-                  <a
-                    href="#"
-                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
-                  >
-                    Classic
-                  </a>
                 </div>
               </div>
             </Modal>
           </div>
           <div className="hidden items-center gap-7 md:flex">
-            <a href="#" className=" flex items-center gap-5 lg:hidden">
-              <CgProfile className="text-white text-4xl" />
-            </a>
             <div className="flex items-center gap-3">
               <SearchOutlined className="text-4xl" />
               <Input
@@ -109,7 +101,6 @@ function Home() {
             </div>
           </div>
         </header>
-        {/* Header - Fim */}
 
         {/* Menu - Start */}
         <Modal
@@ -128,13 +119,15 @@ function Home() {
               />
             </div>
             <div>
-              <div className="bg-white w-full h-14 mt-6 flex p-2">
-                <div className="flex items-center gap-5">
-                  <IoHome className="text-black text-5xl" />
-                  <p className="text-black font-semibold text-3xl">Home</p>
-                </div>
-                <div className="w-full flex justify-end items-center">
-                  <FaMusic className="text-black text-3xl" />
+              <div>
+                <div className="bg-white w-full h-14 mt-6 flex p-2">
+                  <div className="flex items-center gap-5">
+                    <IoHome className="text-black text-5xl" />
+                    <p className="text-black font-semibold text-3xl">Home</p>
+                  </div>
+                  <div className="w-full flex justify-end items-center">
+                    <FaMusic className="text-black text-3xl" />
+                  </div>
                 </div>
               </div>
               <div className="mt-7">
@@ -147,9 +140,10 @@ function Home() {
           </div>
         </Modal>
         {/* Menu - End */}
+        {/* Header - Fim */}
 
         {/* Content - Start */}
-        <div className="bg-black bg-opacity-55 bg-no-repeat bg-fixed bg-cover md:h-194 lg:h-114 w-full p-4 mb-3 md:mb-0">
+        <div className="p-4">
           {/* Search - Start */}
           <div className="pb-7 flex items-center gap-3 md:hidden">
             <SearchOutlined className="text-4xl" />
@@ -162,12 +156,12 @@ function Home() {
           {/* Search - End */}
 
           {/* Genders - Start */}
-          <div className="-mt-3 w-99 md:flex items-center gap-16 justify-end md:w-full lg:hidden ">
-            <h1 className="font-semibold text-3xl">Gêneros</h1>
+          <div className="-mt-3 w-99 md:flex items-center gap-36 justify-end md:w-full lg:hidden ">
+            <h1 className="font-semibold text-2xl md:text-3xl">Gêneros</h1>
             <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
-                  <div className="flex pt-4 gap-5">
+                  <div className="flex pt-4 gap-5 md:gap-8">
                     {/* Rock - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-2 text-center active:bg-white active:border-black active:text-black">
                       <Link to="../rock">
@@ -181,25 +175,14 @@ function Home() {
 
                     {/* Pop - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
-                      <a href="#" className="active:text-black">
+                      <Link to="../pop" className="active:text-black">
                         <div className="flex justify-center">
                           <IoHeadset className="text-white text-5xl mb-1 active:text-black" />
                         </div>
                         <p className="font-bold text-2xl">Pop</p>
-                      </a>
+                      </Link>
                     </div>
                     {/* Pop - End */}
-
-                    {/* Classical - Start */}
-                    <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                      <a href="#">
-                        <div className="flex justify-center">
-                          <GiViolin className="text-white text-6xl active:text-black" />
-                        </div>
-                        <p className="font-bold text-xl">Clássica</p>
-                      </a>
-                    </div>
-                    {/* Classical - End */}
 
                     {/* Eletronic - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
@@ -400,7 +383,7 @@ function Home() {
                           />
                           <p className="flex justify-center text-start font-semibold mt-3 text-xs">
                             Talking to the moon - <br />
-                            Buno Mars
+                            Bruno Mars
                           </p>
                         </a>
                       </div>
@@ -809,7 +792,7 @@ function Home() {
                         >
                           <img
                             src="../public/images/eyeofthetiger.jpg"
-                            alt="Falling"
+                            alt="Eye of the tiger"
                             className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                           />
                           <p className="flex justify-center text-start font-semibold mt-2 text-sm">
@@ -1095,7 +1078,7 @@ function Home() {
                           className="flex-col justify-center items-center text-center"
                         >
                           <img
-                            src="../public/images/linkin-park.jpg"
+                            src="../public/images/onemorelight.jpg"
                             alt="One more light"
                             className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                           />
@@ -1170,12 +1153,13 @@ function Home() {
                           className="flex-col justify-center items-center text-center"
                         >
                           <img
-                            src="../public/images/linkin-park.jpg"
+                            src="../public/images/intheend.jpg"
                             alt="In the end"
-                            className="w-screen h-48 border-b-2 border-white rounded-t-xl bg-white"
+                            className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                           />
                           <p className="flex justify-center text-start font-semibold mt-1">
-                            In the end <br /> - Linkin Park
+                            In the end -<br />
+                            Linkin Park
                           </p>
                         </a>
                       </div>
@@ -1289,7 +1273,7 @@ function Home() {
                     <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                       <div className="flex-col justify-center items-center text-center">
                         <a
-                          href="https://www.youtube.com/watch?v=E0ozmU9cJDg"
+                          href="https://www.youtube.com/watch?v=hTWKbfoikeg"
                           className="flex-col justify-center items-center text-center"
                         >
                           <img
@@ -1299,7 +1283,7 @@ function Home() {
                           />
                           <p className="flex justify-center text-start font-semibold mt-2 text-sm">
                             Smells like spirit - <br />
-                            Metalica
+                            Nirvana
                           </p>
                         </a>
                       </div>
@@ -1441,38 +1425,6 @@ function Home() {
           {/* For You - End */}
         </div>
         {/* Content - End */}
-
-        {/* Footer - Start */}
-        <div className="w-screen h-36 md:h-36 bg-gray8  md:flex md:items-center md:justify-end xxl:justify-start">
-          <footer className="pt-2 md:p-4 md:pt-0 pl-5 pr-5 md:flex md:items-center md:gap-[4rem] lg:gap-[7.08rem] xl:gap-5 xxl:gap-8">
-            <img
-              src="../public/images/logo.png"
-              alt="Logo"
-              className="w-24 md:w-52 lg:w-56 xl:w-52 flex"
-            />
-            <div className="md:flex-col md:flex md:mt-4 md:gap-3 xl:flex-row xxl:gap-12">
-              <a
-                href="https://github.com/GabrielMarquesCorreia/Musga---Project"
-                className="flex items-center"
-              >
-                <FaGithub className="text-2xl md:text-5xl mr-3 lg:mr-6" />
-                <p className="text-xs md:text-sm lg:text-xl pt-1">
-                  https://github.com/GabrielMarquesCorreia/Musga---Project
-                </p>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/gabriel-marques-correia-077949232/"
-                className="flex items-center"
-              >
-                <FaLinkedin className="text-2xl md:text-5xl mr-3 lg:mr-6" />
-                <p className="text-xs md:text-sm lg:text-xl pt-1">
-                  https://www.linkedin.com/in/gabriel-marques-correia-077949232/
-                </p>
-              </a>
-            </div>
-          </footer>
-        </div>
-        {/* Footer - End */}
       </div>
     </div>
   );
