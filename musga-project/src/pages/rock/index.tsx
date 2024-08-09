@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { GiGuitar, GiMusicalKeyboard } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
-import { LiaMicrophoneAltSolid } from "react-icons/lia";
+import { LiaDrumSolid, LiaMicrophoneAltSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 function Rock() {
@@ -70,12 +70,12 @@ function Rock() {
                 >
                   Pop
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="../eletronic"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Eletronic
-                </a>
+                </Link>
               </div>
               <div className="flex flex-col gap-2">
                 <a
@@ -83,6 +83,12 @@ function Rock() {
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Rap
+                </a>
+                <a
+                  href="#"
+                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                >
+                  Brasileira
                 </a>
               </div>
             </div>
@@ -148,14 +154,14 @@ function Rock() {
         {/* Search - End */}
 
         {/* Genders - Start */}
-        <div className="pt-4 w-full md:flex items-center gap-36 justify-end md:w-full lg:hidden ">
+        <div className="pt-3 w-full md:flex items-center gap-16 justify-end md:w-full lg:hidden ">
           <h1 className="font-semibold text-2xl md:text-3xl">Gêneros</h1>
           <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
             <div className="flex w-100 md:w-full">
               <div className="flex gap-3 w-39 md:w-full">
-              <div className="flex pt-4 gap-5 md:gap-8">
+                <div className="flex pt-4 gap-5">
                   {/* Rock - Start */}
-                  <div className="border-solid border-[4.1px] h-24 w-24 p-2 text-center bg-white border-black text-black">
+                  <div className="border-solid border-[6px] h-24 w-24 p-2 text-center bg-white border-black text-black">
                     <Link to="../rock">
                       <div className="flex justify-center ">
                         <GiGuitar className="text-black text-5xl" />
@@ -178,12 +184,12 @@ function Rock() {
 
                   {/* Eletronic - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../eletronic">
                       <div className="flex justify-center">
                         <GiMusicalKeyboard className="text-white text-6xl active:text-black" />
                       </div>
                       <p className="font-bold text-base">Eletronica</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* Eletronic - End */}
 
@@ -197,12 +203,24 @@ function Rock() {
                     </a>
                   </div>
                   {/* Rap - End */}
+
+                  {/* BR - Start */}
+                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
+                    <a href="#">
+                      <div className="flex justify-center">
+                        <LiaDrumSolid className="text-white text-6xl active:text-black" />
+                      </div>
+                      <p className="font-bold text-lg">Brasileira</p>
+                    </a>
+                  </div>
+                  {/* BR - End */}
                 </div>
               </div>
             </div>
           </div>
         </div>
         {/* Genders - End */}
+
         {/* My favorites - Start */}
         <h1 className="font-semibold text-2xl pt-4 md:text-3xl lg:pt-0">
           Minhas favoritas
@@ -559,7 +577,7 @@ function Rock() {
                 </div>
                 {/* Seventeenth Music - End */}
 
-                {/* Seventeenth Music - Start */}
+                {/* Eightteenth Music - Start */}
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
@@ -577,9 +595,9 @@ function Rock() {
                     </a>
                   </div>
                 </div>
-                {/* Seventeenth Music - End */}
+                {/* Eightteenth Music - End */}
 
-                {/* Eightteenth Music - Start */}
+                {/* Nineteenth Music - Start */}
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
@@ -597,9 +615,9 @@ function Rock() {
                     </a>
                   </div>
                 </div>
-                {/* Eightteenth Music - End */}
+                {/* Nineteenth Music - End */}
 
-                {/* Nineteenth Music - Start */}
+                {/* Twentieth Music - Start */}
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
@@ -617,9 +635,9 @@ function Rock() {
                     </a>
                   </div>
                 </div>
-                {/* Nineteenth Music - End */}
+                {/* Twentieth Music - End */}
 
-                {/* Twentieth Music - Start */}
+                {/* Twenty-first Music - Start */}
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
@@ -637,7 +655,7 @@ function Rock() {
                     </a>
                   </div>
                 </div>
-                {/* Twentieth Music - End */}
+                {/* Twenty-first - End */}
               </div>
             </div>
           </div>

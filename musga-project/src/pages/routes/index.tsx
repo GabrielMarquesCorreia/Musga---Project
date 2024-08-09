@@ -4,6 +4,7 @@ import Home from "../home";
 import Rock from "../rock";
 import Pop from "../pop";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Eletronic from "../eletronic";
 
 export function Router() {
   return (
@@ -15,6 +16,7 @@ export function Router() {
             <Route path="/home" element={<Home />} />
             <Route path="/rock" element={<Rock />} />
             <Route path="/pop" element={<Pop />} />
+            <Route path="/eletronic" element={<Eletronic />} />
           </Routes>
           {/* Footer - Start */}
           <div className="w-screen h-36 md:h-36 bg-gray8  md:flex md:items-center md:justify-end xxl:justify-start">

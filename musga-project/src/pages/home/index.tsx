@@ -7,7 +7,7 @@ import { FaMusic } from "react-icons/fa";
 import { GiGuitar, GiMusicalKeyboard } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
-import { LiaMicrophoneAltSolid } from "react-icons/lia";
+import { LiaDrumSolid, LiaMicrophoneAltSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -38,7 +38,10 @@ function Home() {
             />
           </div>
           <div className="sm:hidden md:flex gap-5 items-center xl:gap-8 cursor-pointer">
-            <Link to="../home" className="text-white text-xl">
+            <Link
+              to="../home"
+              className="text-white font-bold border-b-white border-b-solid border-b-[2px] text-xl"
+            >
               Home
             </Link>
             <a href="#" className="text-white text-xl">
@@ -73,12 +76,12 @@ function Home() {
                   >
                     Pop
                   </Link>
-                  <a
-                    href="#"
+                  <Link
+                    to="../eletronic"
                     className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                   >
                     Eletronic
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex flex-col gap-2">
                   <a
@@ -86,6 +89,12 @@ function Home() {
                     className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                   >
                     Rap
+                  </a>
+                  <a
+                    href="#"
+                    className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  >
+                    Brasileira
                   </a>
                 </div>
               </div>
@@ -156,12 +165,12 @@ function Home() {
           {/* Search - End */}
 
           {/* Genders - Start */}
-          <div className="-mt-3 w-99 md:flex items-center gap-36 justify-end md:w-full lg:hidden ">
+          <div className="-mt-3 w-99 md:flex items-center gap-16 justify-end md:w-full lg:hidden ">
             <h1 className="font-semibold text-2xl md:text-3xl">Gêneros</h1>
             <div className="scrollA md:flex justify-center items-center text-center overflow-x-auto max-w-screen-lg ">
               <div className="flex w-100 md:w-full">
                 <div className="flex gap-3 w-39 md:w-full">
-                  <div className="flex pt-4 gap-5 md:gap-8">
+                  <div className="flex pt-4 gap-5 ">
                     {/* Rock - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-2 text-center active:bg-white active:border-black active:text-black">
                       <Link to="../rock">
@@ -186,12 +195,12 @@ function Home() {
 
                     {/* Eletronic - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
-                      <a href="#">
+                      <Link to="../eletronic">
                         <div className="flex justify-center">
                           <GiMusicalKeyboard className="text-white text-6xl active:text-black" />
                         </div>
                         <p className="font-bold text-base">Eletronica</p>
-                      </a>
+                      </Link>
                     </div>
                     {/* Eletronic - End */}
 
@@ -205,6 +214,17 @@ function Home() {
                       </a>
                     </div>
                     {/* Rap - End */}
+
+                    {/* BR - Start */}
+                    <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
+                      <a href="#">
+                        <div className="flex justify-center">
+                          <LiaDrumSolid className="text-white text-6xl active:text-black" />
+                        </div>
+                        <p className="font-bold text-lg">Brasileira</p>
+                      </a>
+                    </div>
+                    {/* BR - End */}
                   </div>
                 </div>
               </div>
@@ -1400,7 +1420,7 @@ function Home() {
                     <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                       <div className="flex-col justify-center items-center text-center">
                         <a
-                          href="https://www.youtube.com/watch?v=Aiay8I5IPB8"
+                          href="https://www.youtube.com/watch?v=9Zj0JOHJR-s"
                           className="flex-col justify-center items-center text-center"
                         >
                           <img
