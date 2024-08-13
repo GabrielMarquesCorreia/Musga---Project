@@ -8,7 +8,7 @@ import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
 import { LiaDrumSolid, LiaMicrophoneAltSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
-function Eletronic() {
+function Rap() {
   const [isFirstModalVisible, setIsFirstModalVisible] = useState(false);
   const [isSecondModalVisible, setIsSecondModalVisible] = useState(false);
 
@@ -25,7 +25,7 @@ function Eletronic() {
           <button onClick={showSecondModal}>
             <UnorderedListOutlined className="text-5xl font-bold" />
           </button>
-          <p className="font-bold text-2xl pl-7">Eletronica</p>
+          <p className="font-bold text-2xl pl-7">Rap</p>
         </div>
         <div className="flex justify-end lg:m-0">
           <img
@@ -66,13 +66,13 @@ function Eletronic() {
                 </Link>
                 <Link
                   to="../pop"
-                  className="flex justify-center items-center text-center font-bold text-2xl"
+                  className="flex justify-center items-center text-center active:bg-white font-bold border-b-white border-b-solid border-b-[2px] text-2xl w-14"
                 >
                   Pop
                 </Link>
                 <Link
                   to="../eletronic"
-                  className="text-2xl font-bold flex justify-center items-center text-center border-b-white border-b-solid border-b-[2px]"
+                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Eletronic
                 </Link>
@@ -181,10 +181,10 @@ function Eletronic() {
                   {/* Pop - End */}
 
                   {/* Eletronic - Start */}
-                  <div className="border-solid border-[6px] h-24 w-24 text-center bg-white border-black text-black">
+                  <div className="bg-gray8 border-white border-solid border-[4.1px] active:bg-white active:border-black active:text-black h-24 w-24 text-center text-white">
                     <Link to="../eletronic">
                       <div className="flex justify-center">
-                        <GiMusicalKeyboard className="text-black text-6xl active:text-white" />
+                        <GiMusicalKeyboard className="text-white text-6xl mb-1 active:text-white" />
                       </div>
                       <p className="font-bold text-base">Eletronica</p>
                     </Link>
@@ -192,10 +192,10 @@ function Eletronic() {
                   {/* Eletronic - End */}
 
                   {/* Rap - Start */}
-                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
+                  <div className="bg-white border-black border-solid border-[6px] h-24 w-24 p-1 text-center text-black">
                     <Link to="../rap">
                       <div className="flex justify-center">
-                        <LiaMicrophoneAltSolid className="text-white text-5xl mb-1 active:text-black" />
+                        <LiaMicrophoneAltSolid className="text-5xl mb-1 text-black" />
                       </div>
                       <p className="font-bold text-2xl">Rap</p>
                     </Link>
@@ -231,19 +231,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=1y6smkh6c-0"
+                      href="https://www.youtube.com/watch?v=8CdcCD5V-d8"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/dontworrychild.jpg"
-                        alt="Don't worry child"
+                        src="../public/images/venom.jpg"
+                        alt="Venom"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
-                        Don't worry child - <br />
-                        Swedish House Mafia
-                        <br />
-                        ft. John Martin
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Venom - <br />
+                        Eminem
                       </p>
                     </a>
                   </div>
@@ -254,17 +252,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=oRArmtMA9AI"
+                      href="https://www.youtube.com/watch?v=xFYQQPAOz7Y"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/fly.png"
-                        alt="Fly"
+                        src="../public/images/lose-yourself.png"
+                        alt="Lose Yourself"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Fly - <br />
-                        Marshmello
+                        Lose Yourself - <br />
+                        Eminem
                       </p>
                     </a>
                   </div>
@@ -275,17 +273,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=m7Bc3pLyij0"
+                      href="https://www.youtube.com/watch?v=eJO5HU_7_1w"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/happier.png"
-                        alt="Fly"
+                        src="../public/images/the-real-slim-shady.png"
+                        alt="The Real Slim Shady"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Happier - <br />
-                        Marshmello
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        The Real Slim Shady
+                        <br />- Eminem
                       </p>
                     </a>
                   </div>
@@ -296,17 +294,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=YH18coS7c9E"
+                      href="https://www.youtube.com/watch?v=Obim8BYGnOE"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/shockwave.png"
-                        alt="Shockwave"
+                        src="../public/images/till-i-collapse.png"
+                        alt="Till I Collapse"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Shockwave - <br />
-                        Marshmello
+                        Till I Collapse
+                        <br />- Eminem
                       </p>
                     </a>
                   </div>
@@ -317,18 +315,16 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=CY8E6N5Nzec"
+                      href="https://www.youtube.com/watch?v=6EEW-9NDM5k"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/friends.png"
-                        alt="Friends"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                        src="../public/images/lonely.jpg"
+                        alt="Lonely"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl bg-white"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
-                        Friends - <br />
-                        Marshmello & <br />
-                        Anne Marie
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Lonely <br /> - Akon
                       </p>
                     </a>
                   </div>
@@ -339,17 +335,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=fiusxyygqGk"
+                      href="https://www.youtube.com/watch?v=YVkUvmDQ3HY"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/you&me.png"
-                        alt="You & Me"
+                        src="../public/images/without-me.png"
+                        alt="Without me"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        You & Me - <br />
-                        Marshmello
+                        Without me -<br />
+                        Eminem
                       </p>
                     </a>
                   </div>
@@ -360,17 +356,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=5y_KJAg8bHI"
+                      href="https://www.youtube.com/watch?v=D4hAVemuQXY"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/wakemeup.png"
-                        alt="Wake me up"
+                        src="../public/images/sing-for-the-moment.png"
+                        alt="Sing For The Moment"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Wake me up - <br />
-                        Avicii
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Sing For The Moment -<br />
+                        Eminem
                       </p>
                     </a>
                   </div>
@@ -381,17 +377,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=-ncIVUXZla8"
+                      href="https://www.youtube.com/watch?v=fPO76Jlnz6c"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/waitingforlove.png"
-                        alt="Waiting for love"
+                        src="../public/images/gangsta-paradise.png"
+                        alt="Gangsta's Paradise"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Waiting for love - <br />
-                        Avicii
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Gangsta's Paradise - <br />
+                        Coolio Feat.L.V.
                       </p>
                     </a>
                   </div>
@@ -402,17 +398,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=_ovdm2yX4MA"
+                      href="https://www.youtube.com/watch?v=MIXqIFY51P4"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/levels.png"
-                        alt="Levels"
+                        src="../public/images/tic-tac.png"
+                        alt="Cnv Sound Vol.14"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Levels - <br />
-                        Avicii
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Cnv Sound Vol.14 - <br />
+                        PURE NEGGA
                       </p>
                     </a>
                   </div>
@@ -423,17 +419,18 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=WRz2MxhAdJo"
+                      href="https://www.youtube.com/watch?v=2zNSgSzhBfM"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/withoutyou.png"
-                        alt="Without You"
+                        src="../public/images/hold-us.png"
+                        alt="Can't Hold Us"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Without You - <br />
-                        Avicii
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Can't Hold Us -<br />
+                        Macklemore & Ryan
+                        <br /> Lewis Ft.Ray Dalton
                       </p>
                     </a>
                   </div>
@@ -444,17 +441,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=YxIiPLVR6NA"
+                      href="https://www.youtube.com/watch?v=GjVoB8zQQ6o"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/hey-brother.png"
-                        alt="Hey Brother"
+                        src="../public/images/congratulations.jpg"
+                        alt="Congratulations"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Hey Brother - <br />
-                        Avicii
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Congratulations - <br />
+                        Post Malone Ft.Quavo
                       </p>
                     </a>
                   </div>
@@ -465,17 +462,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=yKNxeF4KMsY"
+                      href="https://www.youtube.com/watch?v=utd2i-Zc1l4"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/yellow.png"
-                        alt="Yellow"
+                        src="../public/images/i-dont-wanna-die.png"
+                        alt="I don't wanna die"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Yellow -<br />
-                        Coldplay
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        I don't wanna die -<br />
+                        Hollywood Undead
                       </p>
                     </a>
                   </div>
@@ -486,17 +483,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=YykjpeuMNEk"
+                      href="https://www.youtube.com/watch?v=DHhHUZsXTBk"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/hym-for-the-weekend.png"
-                        alt="Hym for the weekend"
+                        src="../public/images/paralyzed.png"
+                        alt="I'm Paralyzed"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Hym for the
-                        <br /> weekend - Coldplay
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        I'm Paralyzed -<br />
+                        NF
                       </p>
                     </a>
                   </div>
@@ -507,17 +504,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=uQpKzPCBqc4"
+                      href="https://www.youtube.com/watch?v=4e4qsTr22XQ"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/never-be-alone-again.jpg"
-                        alt="Never be alone again"
+                        src="../public/images/rip.png"
+                        alt="R.I.P"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Never be alone
-                        <br /> again - Shadrow
+                        R.I.P -
+                        <br /> 3OH!3
                       </p>
                     </a>
                   </div>
@@ -528,16 +525,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=1G4isv_Fylg"
+                      href="https://www.youtube.com/watch?v=JWA5hJl4Dv0"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/paradise.png"
-                        alt="Paradise"
+                        src="../public/images/bombapatch.jpg"
+                        alt="Bomba Patch"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Paradise -<br /> Coldplay
+                        Don't matter - <br />
+                        Akon
                       </p>
                     </a>
                   </div>
@@ -548,16 +546,16 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=dvgZkm1xWPE"
+                      href="https://www.youtube.com/watch?v=LvCcK8gLZJw"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/viva-la-vida.png"
-                        alt="Viva la vida"
+                        src="../public/images/júpiter.png"
+                        alt="Júpiter"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Viva la vida -<br /> Coldplay
+                        Júpiter -<br /> VMZ
                       </p>
                     </a>
                   </div>
@@ -568,16 +566,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=F90Cw4l-8NY"
+                      href="https://www.youtube.com/watch?v=Kd30za8wHc8"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/pompei.png"
-                        alt="Pompei"
+                        src="../public/images/depoimento.png"
+                        alt="Depoimento de um viciado"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Pompei -<br /> Bastille
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Depoimento de um
+                        <br /> viciado - Racionais Mc's
                       </p>
                     </a>
                   </div>
@@ -588,18 +587,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=FM7MFYoylVs"
+                      href="https://www.youtube.com/watch?v=ByefwiKh4Oo"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/something-just-like-this.png"
-                        alt="Something just like this"
+                        src="../public/images/halloween.png"
+                        alt="Missing Halloween"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
-                        Something just like this
-                        <br />- The Chainsmokers
-                        <br />& Coldplay
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Missing Halloween -
+                        <br /> VMZ
                       </p>
                     </a>
                   </div>
@@ -610,17 +608,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=ALZHF5UqnU4"
+                      href="https://www.youtube.com/watch?v=dGFxdmuDA4A"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/alone.png"
-                        alt="Alone"
+                        src="../public/images/depoimento.png"
+                        alt="Diário de um detento"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Alone -<br />
-                        Marshmello
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Diário de um detento -<br />
+                        Racionais Mc's
                       </p>
                     </a>
                   </div>
@@ -631,22 +629,44 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=A57B7B6w3kw"
+                      href="https://m.youtube.com/watch?v=ytHxB1JOhoI&pp=ygUMI3JpY2tfbXVzaWNh"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/stars.png"
-                        alt="Stars"
+                        src="../public/images/sanchez.png"
+                        alt="Sanchez"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Stars -<br />
-                        Marshmello
+                        Sanchez -<br />
+                        VMZ
                       </p>
                     </a>
                   </div>
                 </div>
                 {/* Twentieth Music - End */}
+
+                {/* Twenty-first Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=RHnEVjd6eRg"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/one-shot.png"
+                        alt="Última Chance (One Shot)"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Última Chance
+                        <br />
+                        (One Shot) - VMZ
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Twenty-first - End */}
               </div>
             </div>
           </div>
@@ -665,17 +685,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=vTZex-AXC6g"
+                      href="https://www.youtube.com/watch?v=uelHwf8o7_U"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/forever.png"
-                        alt="Forever"
+                        src="../public/images/love-the-way.png"
+                        alt="Love the way you lie"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Forever - <br />
-                        Marshmello X Pluko
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Love the way you lie
+                        <br />- Eminem Ft.Rihanna
                       </p>
                     </a>
                   </div>
@@ -686,19 +706,17 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=r-BhWxHjJuo"
+                      href="https://www.youtube.com/watch?v=bKDdT_nyP54"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/si-ai.png"
-                        alt="Si ai"
+                        src="../public/images/smack-that.png"
+                        alt="Smack That"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt text-sm">
-                        Tanya - Si ai
-                        <br />
-                        (Marshmello &<br />
-                        UKAY Remix)
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Smack That - <br />
+                        Akon Ft.Eminem
                       </p>
                     </a>
                   </div>
@@ -709,192 +727,22 @@ function Eletronic() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=yU0tnrEk8H4"
+                      href="https://www.youtube.com/watch?v=gOMhN-hfMtY"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/moving-on.png"
-                        alt="Moving on"
+                        src="../public/images/stan.png"
+                        alt="Stan"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Moving on -
-                        <br />
-                        Marshmello
+                        Stan -<br />
+                        Eminem
                       </p>
                     </a>
                   </div>
                 </div>
                 {/* Third Music - End */}
-
-                {/* Fourth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/heroes-tonight.png"
-                        alt="Heroes tonight"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Heroes tonight -
-                        <br /> Janji Ft.Johnning
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Fourth Music - End */}
-
-                {/* Fourth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=l18A5BOTlzE"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/the-living-tombstone.png"
-                        alt="Five night's at freddy's"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Five night's at freddy's -
-                        <br /> The Living Tombstone
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Fourth Music - End */}
-
-                {/* Fifth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=gk-aCL6eyGc"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/its-been-so-long.png"
-                        alt="Five night's at freddy's 2"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Five night's at freddy's 2
-                        <br />- The Living Tombstone
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Fifth Music - End */}
-
-                {/* Sixth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=AibtyCAhyQE"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/die-on-fire.png"
-                        alt="Five night's at freddy's 3"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Five night's at freddy's 3
-                        <br />- The Living Tombstone
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Sixth Music - End */}
-
-                {/* Seventh Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=Fy8hK3blQOQ"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/i-need-some-sleep.png"
-                        alt="I need some sleep"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        I need some sleep
-                        <br />- Eels
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Seventh Music - End */}
-
-                {/* Eigth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=gAjR4_CbPpQ"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/harder-better-faster-stronger.png"
-                        alt="Harder, Better, Faster, Stronger"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Harder, Better, Faster,
-                        <br />
-                        Stronger - Daft Punk
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Eigth Music - End */}
-
-                {/* Nineth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=ZvRlusdjMSs"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/controllah.png"
-                        alt="Controllah"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Controllah -<br />
-                        Gorillaz Ft.Mc Bin laden
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Nineth Music - End */}
-
-                {/* Tenth Music - Start */}
-                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
-                  <div className="flex-col justify-center items-center text-center">
-                    <a
-                      href="https://www.youtube.com/watch?v=1V_xRb0x9aw"
-                      className="flex-col justify-center items-center text-center"
-                    >
-                      <img
-                        src="../public/images/clint-eastwood.png"
-                        alt="Clint Eastwood"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
-                      />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Clint Eastwood -<br />
-                        Gorillaz
-                      </p>
-                    </a>
-                  </div>
-                </div>
-                {/* Tenth Music - End */}
               </div>
             </div>
           </div>
@@ -906,4 +754,4 @@ function Eletronic() {
   );
 }
 
-export default Eletronic;
+export default Rap;

@@ -70,19 +70,20 @@ function Pop() {
                 >
                   Pop
                 </Link>
-                <Link to="../eletronic"
+                <Link
+                  to="../eletronic"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Eletronic
                 </Link>
               </div>
               <div className="flex flex-col gap-2">
-                <a
-                  href="#"
+                <Link
+                  to="../rap"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Rap
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
@@ -196,12 +197,12 @@ function Pop() {
 
                   {/* Rap - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../rap">
                       <div className="flex justify-center">
                         <LiaMicrophoneAltSolid className="text-white text-5xl mb-1 active:text-black" />
                       </div>
                       <p className="font-bold text-2xl">Rap</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* Rap - End */}
 
@@ -938,16 +939,17 @@ function Pop() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=6EEW-9NDM5k"
+                      href="https://www.youtube.com/watch?v=-oCCnxBos10"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/lonely.jpg"
-                        alt="Lonely"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl bg-white"
+                        src="../public/images/hold-my-hand.png"
+                        alt="Hold my hand"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Lonely <br /> - Akon
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Hold my hand - <br />
+                        Michael Jackson Ft.Akon
                       </p>
                     </a>
                   </div>

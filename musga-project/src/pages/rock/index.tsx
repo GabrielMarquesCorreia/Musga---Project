@@ -78,12 +78,12 @@ function Rock() {
                 </Link>
               </div>
               <div className="flex flex-col gap-2">
-                <a
-                  href="#"
+                <Link
+                  to="../rap"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Rap
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
@@ -195,12 +195,12 @@ function Rock() {
 
                   {/* Rap - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../rap">
                       <div className="flex justify-center">
                         <LiaMicrophoneAltSolid className="text-white text-5xl mb-1 active:text-black" />
                       </div>
                       <p className="font-bold text-2xl">Rap</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* Rap - End */}
 
