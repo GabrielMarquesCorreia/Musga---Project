@@ -38,9 +38,9 @@ function Rap() {
           <Link to="../home" className="text-white text-xl">
             Home
           </Link>
-          <a href="#" className="text-white text-xl">
+          <Link to="../profile" className="text-white text-xl">
             Perfil
-          </a>
+          </Link>
           <div
             className="lg:flex items-center gap-1 md:hidden"
             onClick={showFirstModal}
@@ -66,7 +66,7 @@ function Rap() {
                 </Link>
                 <Link
                   to="../pop"
-                  className="flex justify-center items-center text-center active:bg-white font-bold border-b-white border-b-solid border-b-[2px] text-2xl w-14"
+                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Pop
                 </Link>
@@ -80,16 +80,16 @@ function Rap() {
               <div className="flex flex-col gap-2">
                 <Link
                   to="../rap"
-                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                  className="flex justify-center items-center text-center active:bg-white font-bold border-b-white border-b-solid border-b-[2px] text-2xl w-14"
                 >
                   Rap
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="../brasilian"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Brasileira
-                </a>
+                </Link>
               </div>
             </div>
           </Modal>
@@ -129,10 +129,10 @@ function Rap() {
           </div>
         </div>
         <div className="mt-7">
-          <a href="#" className=" flex items-center gap-5">
+          <Link to="../profile" className=" flex items-center gap-5">
             <CgProfile className="text-white text-5xl" />
             <p className="text-white font-semibold text-3xl">Perfil</p>
-          </a>
+          </Link>
         </div>
       </Modal>
       {/* Menu - End */}
@@ -204,12 +204,12 @@ function Rap() {
 
                   {/* BR - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../brasilian">
                       <div className="flex justify-center">
                         <LiaDrumSolid className="text-white text-6xl active:text-black" />
                       </div>
                       <p className="font-bold text-lg">Brasileira</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* BR - End */}
                 </div>
@@ -356,17 +356,17 @@ function Rap() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=D4hAVemuQXY"
+                      href="https://www.youtube.com/watch?v=JWA5hJl4Dv0"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/sing-for-the-moment.png"
-                        alt="Sing For The Moment"
+                        src="../public/images/dontmatter.jpg"
+                        alt="Don't matter"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Sing For The Moment -<br />
-                        Eminem
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Don't matter - <br />
+                        Akon
                       </p>
                     </a>
                   </div>
@@ -483,17 +483,17 @@ function Rap() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=DHhHUZsXTBk"
+                      href="https://www.youtube.com/watch?v=vIaH35-MLsk"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/paralyzed.png"
-                        alt="I'm Paralyzed"
+                        src="../public/images/right-now.png"
+                        alt="Right Now"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        I'm Paralyzed -<br />
-                        NF
+                        Right Now - <br />
+                        Akon
                       </p>
                     </a>
                   </div>
@@ -743,6 +743,199 @@ function Rap() {
                   </div>
                 </div>
                 {/* Third Music - End */}
+
+                {/* Fourth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=eAD7MKhpLjY"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/lágrimas.png"
+                        alt="Lágrimas serão sorrisos"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Lágrimas serão
+                        <br />
+                        sorrisos - 7 Minutoz
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Fourth Music - End */}
+
+                {/* Fifth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=XbGs_qK2PQA"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/rap-god.png"
+                        alt="Rap God"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Rap God - <br />
+                        Eminem
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Fifth Music - End */}
+
+                {/* Sixth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=D4hAVemuQXY"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/sing-for-the-moment.png"
+                        alt="Sing For The Moment"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Sing For The Moment -<br />
+                        Eminem
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Sixth Music - End */}
+
+                {/* Seventh Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=e_xGeZDk3Sw"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/rap-lord.png"
+                        alt="Rap Lord"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Rap Lord - <br />
+                        HAIKAISS
+                        <br />
+                        Ft.Jonas Bento
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Seventh Music - End */}
+
+                {/* Eigth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=LAWpTN2Z03o"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/nerd-star.png"
+                        alt="Nerd Star"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Nerd Star - <br />7 minutoz
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Eigth Music - End */}
+
+                {/* Nineth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=DHhHUZsXTBk"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/paralyzed.png"
+                        alt="I'm Paralyzed"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        I'm Paralyzed -<br />
+                        NF
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Nineth Music - End */}
+
+                {/* Tenth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=gAg3uMlNyHA"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/wings.png"
+                        alt="Wings"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Wings - <br />
+                        Macklemore x<br />
+                        Ryan Lewis
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Tenth Music - End */}
+
+                {/* Eleventh Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=BrBTdkF03bc"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/nach.png"
+                        alt="Un Dia En Suburbia"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Anochece - Un Dia En
+                        <br />
+                        Suburbia (Nach)
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Eleventh Music - End */}
+
+                {/* Twenth Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=L3wKzyIN1yk"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/human.png"
+                        alt="Human"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Human -<br />
+                        Rag'n'Bone Man
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Twenth Music - End */}
               </div>
             </div>
           </div>

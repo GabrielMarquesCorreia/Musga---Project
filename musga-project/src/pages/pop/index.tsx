@@ -38,9 +38,9 @@ function Pop() {
           <Link to="../home" className="text-white text-xl">
             Home
           </Link>
-          <a href="#" className="text-white text-xl">
+          <Link to="../profile" className="text-white text-xl">
             Perfil
-          </a>
+          </Link>
           <div
             className="lg:flex items-center gap-1 md:hidden"
             onClick={showFirstModal}
@@ -84,12 +84,12 @@ function Pop() {
                 >
                   Rap
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="../brasilian"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Brasileira
-                </a>
+                </Link>
               </div>
             </div>
           </Modal>
@@ -131,10 +131,10 @@ function Pop() {
               </div>
             </div>
             <div className="mt-7">
-              <a href="#" className=" flex items-center gap-5">
+              <Link to="../profile" className=" flex items-center gap-5">
                 <CgProfile className="text-white text-5xl" />
                 <p className="text-white font-semibold text-3xl">Perfil</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -208,12 +208,12 @@ function Pop() {
 
                   {/* BR - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../brasilian">
                       <div className="flex justify-center">
                         <LiaDrumSolid className="text-white text-6xl active:text-black" />
                       </div>
                       <p className="font-bold text-lg">Brasileira</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* BR - End */}
                 </div>
@@ -448,17 +448,17 @@ function Pop() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=JWA5hJl4Dv0"
+                      href="https://www.youtube.com/watch?v=ApXoWvfEYVU"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/dontmatter.jpg"
-                        alt="Don't matter"
+                        src="../public/images/sunflower.png"
+                        alt="Sunflower"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Don't matter - <br />
-                        Akon
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Sunflower - <br />
+                        Post Malone Ft.Swae Lee
                       </p>
                     </a>
                   </div>

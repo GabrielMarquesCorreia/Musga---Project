@@ -1,5 +1,5 @@
-import { UnorderedListOutlined, SearchOutlined } from "@ant-design/icons";
-import { Modal, Input } from "antd";
+import { SearchOutlined, UnorderedListOutlined } from "@ant-design/icons";
+import { Input, Modal } from "antd";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { GiGuitar, GiMusicalKeyboard } from "react-icons/gi";
@@ -8,7 +8,7 @@ import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
 import { LiaDrumSolid, LiaMicrophoneAltSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
-function Rock() {
+function Brasilian() {
   const [isFirstModalVisible, setIsFirstModalVisible] = useState(false);
   const [isSecondModalVisible, setIsSecondModalVisible] = useState(false);
 
@@ -20,12 +20,12 @@ function Rock() {
   return (
     <div>
       {/* Header - Inicio */}
-      <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
+      <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-10 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
         <div className="flex items-center md:hidden">
           <button onClick={showSecondModal}>
             <UnorderedListOutlined className="text-5xl font-bold" />
           </button>
-          <p className="font-bold text-2xl pl-7">Rock</p>
+          <p className="font-bold text-2xl pl-7">Brasileira</p>
         </div>
         <div className="flex justify-end lg:m-0">
           <img
@@ -60,7 +60,7 @@ function Rock() {
               <div className="flex flex-col gap-2">
                 <Link
                   to="../rock"
-                  className="flex justify-center items-center text-center active:bg-white font-bold border-b-white border-b-solid border-b-[2px] text-2xl w-14"
+                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Rock
                 </Link>
@@ -84,12 +84,12 @@ function Rock() {
                 >
                   Rap
                 </Link>
-                <Link
-                  to="../brasilian"
-                  className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
+                <a
+                  href="#"
+                  className="flex justify-center items-center text-center active:bg-white font-bold border-b-white border-b-solid border-b-[2px] text-2xl w-26"
                 >
                   Brasileira
-                </Link>
+                </a>
               </div>
             </div>
           </Modal>
@@ -121,20 +121,18 @@ function Rock() {
               onClick={hideSecondModal}
             />
           </div>
-          <div>
-            <div className="mt-6 flex">
-              <Link to="../home" className="flex items-center gap-5">
-                <IoHome className="text-white text-5xl" />
-                <p className="text-white font-semibold text-3xl">Home</p>
-              </Link>
-            </div>
-            <div className="mt-7">
-              <Link to="../profile" className=" flex items-center gap-5">
-                <CgProfile className="text-white text-5xl" />
-                <p className="text-white font-semibold text-3xl">Perfil</p>
-              </Link>
-            </div>
+          <div className="mt-6 flex">
+            <Link to="../home" className="flex items-center gap-5">
+              <IoHome className="text-white text-5xl" />
+              <p className="text-white font-semibold text-3xl">Home</p>
+            </Link>
           </div>
+        </div>
+        <div className="mt-7">
+          <Link to="../profile" className=" flex items-center gap-5">
+            <CgProfile className="text-white text-5xl" />
+            <p className="text-white font-semibold text-3xl">Perfil</p>
+          </Link>
         </div>
       </Modal>
       {/* Menu - End */}
@@ -161,10 +159,10 @@ function Rock() {
               <div className="flex gap-3 w-39 md:w-full">
                 <div className="flex pt-4 gap-5">
                   {/* Rock - Start */}
-                  <div className="border-solid border-[6px] h-24 w-24 p-2 text-center bg-white border-black text-black">
+                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-2 text-center active:bg-white active:border-black active:text-black">
                     <Link to="../rock">
                       <div className="flex justify-center ">
-                        <GiGuitar className="text-black text-5xl" />
+                        <GiGuitar className="text-white text-5xl" />
                       </div>
                       <p className="font-bold text-2xl">Rock</p>
                     </Link>
@@ -175,7 +173,7 @@ function Rock() {
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
                     <Link to="../pop" className="active:text-black">
                       <div className="flex justify-center">
-                        <IoHeadset className="text-white text-5xl mb-1 active:text-black" />
+                        <IoHeadset className="text-white text-5xl mb-1" />
                       </div>
                       <p className="font-bold text-2xl">Pop</p>
                     </Link>
@@ -183,10 +181,10 @@ function Rock() {
                   {/* Pop - End */}
 
                   {/* Eletronic - Start */}
-                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
+                  <div className="bg-gray8 border-white border-solid border-[4.1px] active:bg-white active:border-black active:text-black h-24 w-24 text-center text-white">
                     <Link to="../eletronic">
                       <div className="flex justify-center">
-                        <GiMusicalKeyboard className="text-white text-6xl active:text-black" />
+                        <GiMusicalKeyboard className="text-white text-6xl mb-1 active:text-white" />
                       </div>
                       <p className="font-bold text-base">Eletronica</p>
                     </Link>
@@ -194,10 +192,10 @@ function Rock() {
                   {/* Eletronic - End */}
 
                   {/* Rap - Start */}
-                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 p-1 text-center active:bg-white active:border-black active:text-black">
+                  <div className="bg-gray8 border-white border-solid border-[4.1px] active:bg-white active:border-black active:text-black h-24 w-24 p-1 text-center text-white">
                     <Link to="../rap">
                       <div className="flex justify-center">
-                        <LiaMicrophoneAltSolid className="text-white text-5xl mb-1 active:text-black" />
+                        <LiaMicrophoneAltSolid className="text-5xl mb-1 text-white" />
                       </div>
                       <p className="font-bold text-2xl">Rap</p>
                     </Link>
@@ -205,13 +203,13 @@ function Rock() {
                   {/* Rap - End */}
 
                   {/* BR - Start */}
-                  <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                    <Link to="../brasilian">
+                  <div className="active:bg-white active:border-black active:text-black bg-white border-black border-solid border-[6px] h-24 w-24 text-center text-black">
+                    <a href="#">
                       <div className="flex justify-center">
-                        <LiaDrumSolid className="text-white text-6xl active:text-black" />
+                        <LiaDrumSolid className="text-6xl text-black" />
                       </div>
                       <p className="font-bold text-lg">Brasileira</p>
-                    </Link>
+                    </a>
                   </div>
                   {/* BR - End */}
                 </div>
@@ -233,17 +231,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=2X_2IdybTV0"
+                      href="https://www.youtube.com/watch?v=PAUlCK8kuGU"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/melhor-musga.jpg"
-                        alt="Carry on my wayward son"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                        src="../public/images/tim maia.jpg"
+                        alt="Descobridor dos 7 mares"
+                        className="w-screen h-48 border-b-2 border-white"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
-                        Carry on my
-                        <br /> wayward son -<br /> Kansas
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Descobridor dos 7<br />
+                        mares - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -254,16 +252,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=vOXZkm9p_zY"
+                      href="https://www.youtube.com/watch?v=A9kTV-wpiWk"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/birds.jpg"
-                        alt="Birds"
+                        src="../public/images/azul-da-cor-do-mar.png"
+                        alt="Azul da cor do mar"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Birds -<br /> Imagine Dragons
+                        Azul da cor do
+                        <br />
+                        mar - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -274,16 +274,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=NNiTxUEnmKI"
+                      href="https://www.youtube.com/watch?v=Ubfc7gTH7vo"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/final-countdown.jpg"
-                        alt="The final countdown"
+                        src="../public/images/você.png"
+                        alt="Você"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        The final countdown -<br /> Europe
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Você -
+                        <br />
+                        Tim Maia
                       </p>
                     </a>
                   </div>
@@ -294,16 +296,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=njJ7NZMH70M"
+                      href="https://www.youtube.com/watch?v=cxSzri346W0"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/skillet-best.jpg"
-                        alt="Not gonna die"
+                        src="../public/images/gostava-tanto-de-voce.png"
+                        alt="Gostava tanto de você"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Not gonna die -<br /> Skillet
+                        Gostava tanto de
+                        <br />
+                        você - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -314,16 +318,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=Tm8LGxTLtQk"
+                      href="https://www.youtube.com/watch?v=syqJAgTQdlU"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/onemorelight.jpg"
-                        alt="One more light"
+                        src="../public/images/ela-partiu.png"
+                        alt="Ela Partiu"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        One more light -<br /> Linkin Park
+                        Ela Partiu -
+                        <br />
+                        Tim Maia
                       </p>
                     </a>
                   </div>
@@ -334,17 +340,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=9BMwcO6_hyA"
+                      href="https://www.youtube.com/watch?v=PDQrcz4KUKs"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/always.png"
-                        alt="Always"
+                        src="../public/images/me-de-motivo.png"
+                        alt="Me dê motivo"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold text-lg">
-                        Always - <br />
-                        Bon Jovi
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Me dê motivo -
+                        <br />
+                        Tim Maia
                       </p>
                     </a>
                   </div>
@@ -355,17 +362,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=ocpDEOXABWg"
+                      href="https://www.youtube.com/watch?v=FM2tZnIPZUk"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/courtesy-call.jpg"
-                        alt="Courtesy Call"
+                        src="../public/images/so-quero-amar.png"
+                        alt="Não quero dinheiro"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Courtesy Call -<br />
-                        Thousand Foot Krutch
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Não quero dinheiro
+                        <br /> - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -376,17 +383,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=eVTXPUF4Oz4"
+                      href="https://www.youtube.com/watch?v=qBBwXuEV4jA"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/intheend.jpg"
-                        alt="In the end"
+                        src="../public/images/eu-amo-voce.png"
+                        alt="Eu amo você"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        In the end -<br />
-                        Linkin Park
+                        Eu amo você
+                        <br /> - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -397,17 +404,19 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=ilKD9YwM2f4"
+                      href="https://www.youtube.com/watch?v=btPJPFnesV4"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/imaginedragons.png"
-                        alt="Ready aim fire"
+                        src="../public/images/diasdeluta.jpg"
+                        alt="Dias de luta dias de glória"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Ready aim fire -<br />
-                        Imagine Dragons
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Dias de luta dias
+                        <br />
+                        de glória - <br />
+                        Charlie Brown Jr
                       </p>
                     </a>
                   </div>
@@ -418,17 +427,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=hTWKbfoikeg"
+                      href="https://www.youtube.com/watch?v=wBfVsucRe1w"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/nirvana.jpg"
-                        alt="Smells like spirit"
+                        src="../public/images/construcao.png"
+                        alt="Construção"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Smells like spirit - <br />
-                        Nirvana
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Construção - <br />
+                        Chico Buarque
                       </p>
                     </a>
                   </div>
@@ -439,17 +448,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=lDK9QqIzhwk"
+                      href="https://www.youtube.com/watch?v=0dU4mLOHGIQ"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/livingonaprayer.jpg"
-                        alt="Living on a prayer"
+                        src="../public/images/roda-viva.png"
+                        alt="Roda Viva"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Living on a prayer - <br />
-                        Bon jovi
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Roda Viva - <br />
+                        Chico Buarque
                       </p>
                     </a>
                   </div>
@@ -460,37 +469,37 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=t99KH0TR-J4"
+                      href="https://www.youtube.com/watch?v=Kk4bQtpxFhk"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/theshowmustgoon.jpg"
-                        alt="The show must go on"
+                        src="../public/images/meu-guri.png"
+                        alt="O meu guri"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        The show must
-                        <br /> go on - Queen
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        O meu guri - <br />
+                        Chico Buarque
                       </p>
                     </a>
                   </div>
                 </div>
                 {/* Twenth Music - End */}
 
-                {/* Thirteenth Music - Start */}
+                {/*  Thirteenth Music - Start  */}
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=1mjlM_RnsVE"
+                      href="https://www.youtube.com/watch?v=bWnS2dIDgQA"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/monster.jpg"
-                        alt="Monster"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                        src="../public/images/futs.jpg"
+                        alt="No flow"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl bg-white"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Monster -<br /> Skillet
+                        País do Futebol <br /> - Mc Guimê
                       </p>
                     </a>
                   </div>
@@ -501,16 +510,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=2ZBtPf7FOoM"
+                      href="https://www.youtube.com/watch?v=qL9VDKaSO_s"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/killerqueen.jpg"
-                        alt="Killer Queen"
+                        src="../public/images/te-assumi-pro-brasil.png"
+                        alt="Te assumi pro Brasil"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Killer Queen -<br /> Queen
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Te assumi pro Brasil
+                        <br /> - Matheus & Kauan
                       </p>
                     </a>
                   </div>
@@ -521,16 +531,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=2ZBtPf7FOoM"
+                      href="https://www.youtube.com/watch?v=z-weWuwFmKM"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/bohemianrapsody.jpg"
-                        alt="Bohemian Rapsody"
+                        src="../public/images/lana.png"
+                        alt="Lana"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Bohemian Rapsody -<br /> Queen
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Lana -<br /> Kamaitachi
                       </p>
                     </a>
                   </div>
@@ -541,16 +551,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=2aJUnltwsqs"
+                      href="https://www.youtube.com/watch?v=9sg-A-eS6Ig"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/awakeandalive.jpg"
-                        alt="Awake and Alive"
-                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                        src="../public/images/garota de ipanema.png"
+                        alt="Garota de Ipanema"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl bg-white"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Awake and Alive -<br /> Skillet
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Garota de Ipanema <br /> - Antônio Carlos Jobim
                       </p>
                     </a>
                   </div>
@@ -561,16 +571,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=HuS5NuXRb5Y"
+                      href="https://www.youtube.com/watch?v=qGCq4wrQhSg"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/Eleanor Rigby.jpg"
-                        alt="Eleanor Rigby"
+                        src="../public/images/julieta.png"
+                        alt="Julieta"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Eleanor Rigby -<br /> The Beatles
+                        Julieta -<br /> Kamaitachi
                       </p>
                     </a>
                   </div>
@@ -581,16 +591,19 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=TmSRMWw8Y_0"
+                      href="https://www.youtube.com/watch?v=K-YCjqJTOfE"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/hero-chad.jpg"
-                        alt="Hero"
+                        src="../public/images/casa.png"
+                        alt="Casa Mobiliada"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Hero -<br /> Chad Kroeger
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Casa Mobiliada -<br />
+                        Israel e Rodolffo
+                        <br />
+                        Part.Edson e Hudson
                       </p>
                     </a>
                   </div>
@@ -601,16 +614,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=vx2u5uUu3DE"
+                      href="https://www.youtube.com/watch?v=pWpsE8Rr9mI"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/always.png"
-                        alt="It's my life"
+                        src="../public/images/dona-morte.png"
+                        alt="Dona Morte"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        It's my life -<br /> Bon Jovi
+                        Dona Morte
+                        <br />- Nasac
                       </p>
                     </a>
                   </div>
@@ -621,16 +635,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=UQ92eyxnxmQ"
+                      href="https://www.youtube.com/watch?v=wo4pWZApd2Y"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/itsnotover.jpg"
-                        alt="It's not over"
+                        src="../public/images/deixa-acontecer.png"
+                        alt="Deixa acontecer"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        It's Not Over -<br /> Daughtry's
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Deixa acontecer -<br /> Grupo Revelação
                       </p>
                     </a>
                   </div>
@@ -641,21 +655,66 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=kXYiU_JCYtU"
+                      href="https://www.youtube.com/watch?v=EjjCdwxYs3w"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/numb.jpg"
-                        alt="Numb"
+                        src="../public/images/cupido.png"
+                        alt="Cuidado Cupido"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Numb -<br /> Linkin Park
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Cuidado Cupido -<br /> Péricles Part.
+                        <br />
+                        Luan Santana
                       </p>
                     </a>
                   </div>
                 </div>
                 {/* Twenty-first - End */}
+
+                {/* Twenty-second Music - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=KdvsXn8oVPY"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/flores.png"
+                        alt="Pra não dizer que não falei das flores"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Pra não dizer que
+                        <br /> não falei das flores
+                        <br />- Geraldo Vandré
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Twenty-second - End */}
+
+                {/* Twenty-third - Start */}
+                <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
+                  <div className="flex-col justify-center items-center text-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=eyn-kjPgMY0"
+                      className="flex-col justify-center items-center text-center"
+                    >
+                      <img
+                        src="../public/images/punpun.png"
+                        alt="Goodnight"
+                        className="w-screen h-48 border-b-2 border-white rounded-t-xl"
+                      />
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Goodnight - <br />
+                        Shaman
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Twenty-third - End */}
               </div>
             </div>
           </div>
@@ -674,17 +733,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=Aiay8I5IPB8"
+                      href="https://www.youtube.com/watch?v=TQ5DUv_ZwRg"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/howyouremindme.jpg"
-                        alt="How you remind me"
+                        src="../public/images/1kilo.png"
+                        alt="Deixe-me ir"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        How you remind me - <br />
-                        Nickelback
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Deixe-me ir - <br />1 Kilo
                       </p>
                     </a>
                   </div>
@@ -695,17 +753,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=btPJPFnesV4"
+                      href="https://www.youtube.com/watch?v=LT8C5kYwcpA"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/eyeofthetiger.jpg"
-                        alt="Eye of the tiger"
+                        src="../public/images/taka.png"
+                        alt="Vivendo o passado"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Eye of the tiger - <br />
-                        Survivor
+                        Vivendo o<br />
+                        passado - Taka
                       </p>
                     </a>
                   </div>
@@ -716,16 +774,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=sUJkCXE4sAA"
+                      href="https://www.youtube.com/watch?v=xJG1qfm9v7Y"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/loveofmylife.jpg"
-                        alt="Love of my life"
+                        src="../public/images/frankenstein.png"
+                        alt="Frankenstein"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        Love of my life -<br /> Queen
+                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
+                        Frankenstein (Parte por
+                        <br />
+                        Parte) - Chrono
                       </p>
                     </a>
                   </div>
@@ -736,20 +796,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=PWbg7ShjOPk"
+                      href="https://www.youtube.com/watch?v=o6bSuclgy5w"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/8.jpg"
-                        alt="Not gonna die"
+                        src="../public/images/arde-outra-vez.png"
+                        alt="Arde outra vez"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
-                        Eight Beat Berserker -
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Arde outra vez -
                         <br />
-                        Kisida Kyodan&The
-                        <br />
-                        Akebosi Rockets
+                        Thalles Roberto
                       </p>
                     </a>
                   </div>
@@ -760,16 +818,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=E0ozmU9cJDg"
+                      href="https://www.youtube.com/watch?v=iyJDuJggiEM"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/master.jpg"
-                        alt="Master of puppets"
+                        src="../public/images/velha-infancia.png"
+                        alt="Velha Infância"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Master of puppets -<br /> Metalica
+                        Velha Infância -<br /> Tribalistas
                       </p>
                     </a>
                   </div>
@@ -780,17 +838,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=h_L4Rixya64"
+                      href="https://www.youtube.com/watch?v=Nq_AOktdhts"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/thebestofyou.jpg"
-                        alt="The best of you"
+                        src="../public/images/ela-partiu.png"
+                        alt="Que Beleza!"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        The best of you - <br />
-                        Foo Fighters
+                        Que Beleza!
+                        <br /> - Tim Maia
                       </p>
                     </a>
                   </div>
@@ -801,17 +859,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=l9PxOanFjxQ"
+                      href="https://www.youtube.com/watch?v=0dLX40UMUKo"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/immortals.jpg"
-                        alt="Fall out boys"
+                        src="../public/images/ceu-azul.png"
+                        alt="Céu azul"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Immortals -<br />
-                        Fall out boys
+                        Céu azul - <br />
+                        Charlie Brown Jr
                       </p>
                     </a>
                   </div>
@@ -822,17 +880,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=L_jWHffIx5E"
+                      href="https://www.youtube.com/watch?v=agH2bBnNUCs"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/all star.jpg"
-                        alt="All star"
+                        src="../public/images/joao-maria.png"
+                        alt="João e Maria"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        All star -<br />
-                        Smash mouth
+                        João e Maria -<br />
+                        Chico Buarque
                       </p>
                     </a>
                   </div>
@@ -843,17 +901,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=ysSxxIqKNN0"
+                      href="https://www.youtube.com/watch?v=G9RS2BkbqHw"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/newdivine.jpg"
-                        alt="New divine"
+                        src="../public/images/alo-menino.png"
+                        alt="Bola de meia, Bola de gude"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        New divine -<br />
-                        Likin Park
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Bola de meia,
+                        <br /> Bola de gude -<br />
+                        Milton Nascimento
                       </p>
                     </a>
                   </div>
@@ -864,17 +923,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=ktvTqknDobU"
+                      href="https://www.youtube.com/watch?v=JFQN_Szdjb4"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/radioactive.jpg"
-                        alt="Radioactive"
+                        src="../public/images/brasil-de-quem.png"
+                        alt="Brasil de quem?"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Radioactive - <br />
-                        Imagine Dragons
+                        Brasil de quem?
+                        <br />- Mc SId
                       </p>
                     </a>
                   </div>
@@ -885,17 +944,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=LSvOTw8UH6s"
+                      href="https://www.youtube.com/watch?v=YW4-V0xQkTg"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/mydemons.jpg"
-                        alt="My demons"
+                        src="../public/images/piloto-automatico.png"
+                        alt="Piloto Automático"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        My demons - <br />
-                        Starset
+                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
+                        Piloto Automático - <br />
+                        Supercombo
                       </p>
                     </a>
                   </div>
@@ -906,17 +965,17 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=nU307tV32B0"
+                      href="https://www.youtube.com/watch?v=vRiA8cq0ZtA"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/weare.jpg"
-                        alt="The show must go on"
+                        src="../public/images/amianto.png"
+                        alt="Amianto"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        We Are -<br />
-                        ONE OK ROCK
+                      <p className="flex justify-center text-start font-semibold mt-1">
+                        Amianto - <br />
+                        Supercombo
                       </p>
                     </a>
                   </div>
@@ -927,16 +986,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=HdnTSXUWd3E"
+                      href="https://www.youtube.com/watch?v=wDj80rc5QCM"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/courtesy-call.jpg"
-                        alt="Warr of Change"
+                        src="../public/images/nerds.png"
+                        alt="A sociedade dos nerds psicóticos"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-3 text-xs">
-                        Warr of Change -<br /> Thousand Foot Krutch
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        A sociedade dos
+                        <br />
+                        nerds psicóticos -<br /> Kamaitachi
                       </p>
                     </a>
                   </div>
@@ -947,17 +1008,18 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=_Jtpf8N5IDE"
+                      href="https://www.youtube.com/watch?v=FS5rz-lWBIM"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/whowantstoliveforever.jpg"
-                        alt="Who wants to live forever"
+                        src="../public/images/minha-juventude.png"
+                        alt="Minha juventude Part.1 e 2"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-2 text-sm">
-                        Who wants to live
-                        <br /> forever - Queen
+                        Minha juventude
+                        <br />
+                        Part.1 e 2 - Mr.Gyn
                       </p>
                     </a>
                   </div>
@@ -968,16 +1030,19 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=0HgJwrwEEKQ"
+                      href="https://www.youtube.com/watch?v=1vI6BKcbstY"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/sosorry.jpg"
-                        alt="I'm so sorry"
+                        src="../public/images/sou-vitorioso.png"
+                        alt="Sou Vitorioso"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
-                      <p className="flex justify-center text-start font-semibold mt-1">
-                        I'm so sorry -<br /> Imagine dragons
+                      <p className="flex justify-center text-start font-semibold mt-1 text-xs">
+                        Sou Vitorioso -<br />
+                        MC Lele JP e MC
+                        <br />
+                        Neguinho do Kaxeta
                       </p>
                     </a>
                   </div>
@@ -988,16 +1053,16 @@ function Rock() {
                 <div className="border-white border-solid border-[3px] h-64 w-36 rounded-2xl bg-gray8">
                   <div className="flex-col justify-center items-center text-center">
                     <a
-                      href="https://www.youtube.com/watch?v=uGcsIdGOuZY"
+                      href="https://www.youtube.com/watch?v=Ubol9NyLWZc"
                       className="flex-col justify-center items-center text-center"
                     >
                       <img
-                        src="../public/images/hero-skillet.jpg"
-                        alt="Hero"
+                        src="../public/images/chove-chuva.png"
+                        alt="Chove Chuva"
                         className="w-screen h-48 border-b-2 border-white rounded-t-xl"
                       />
                       <p className="flex justify-center text-start font-semibold mt-1">
-                        Hero -<br /> Skillet
+                        Chove Chuva -<br /> Jorge Ben
                       </p>
                     </a>
                   </div>
@@ -1014,4 +1079,4 @@ function Rock() {
   );
 }
 
-export default Rock;
+export default Brasilian;

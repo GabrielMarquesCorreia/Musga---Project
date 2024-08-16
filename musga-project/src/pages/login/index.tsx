@@ -25,7 +25,7 @@ function Login() {
 
           <div className="grid grid-cols-2 pt-10 gap-12 md:gap-7 lg:gap-14 xl:gap-16 md:flex">
             <div className="col-span-1 m-0">
-              <Link className="text-center" to="../home">
+              <Link className="text-center" to="../profile/1">
                 <img
                   src="../public/images/jake.jpg"
                   alt="Profile-1"
@@ -36,7 +36,7 @@ function Login() {
             </div>
 
             <div className="col-span-1 m-0">
-              <Link className="text-center" to="../home">
+              <Link className="text-center" to="../profile/2">
                 <img
                   src="../public/images/luffy.jpg"
                   alt="Profile-1"
@@ -47,7 +47,7 @@ function Login() {
             </div>
 
             <div className="col-span-1 m-0">
-              <Link className="text-center" to="../home">
+              <Link className="text-center" to="../profile/3">
                 <img
                   src="../public/images/astronauta.jpg"
                   alt="Profile-1"

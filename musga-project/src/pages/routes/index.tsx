@@ -6,6 +6,8 @@ import Pop from "../pop";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Eletronic from "../eletronic";
 import Rap from "../rap";
+import Brasilian from "../brasilian";
+import Profile from "../profile";
 
 export function Router() {
   return (
@@ -19,6 +21,8 @@ export function Router() {
             <Route path="/pop" element={<Pop />} />
             <Route path="/eletronic" element={<Eletronic />} />
             <Route path="/rap" element={<Rap />} />
+            <Route path="/brasilian" element={<Brasilian />} />
+            <Route path="/profile/:userId" element={<Profile />} />
           </Routes>
           {/* Footer - Start */}
           <div className="w-screen h-36 md:h-36 bg-gray8  md:flex md:items-center md:justify-end xxl:justify-start">

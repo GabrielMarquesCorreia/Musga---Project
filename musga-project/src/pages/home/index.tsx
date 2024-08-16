@@ -3,7 +3,6 @@ import { Input, Modal } from "antd";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaMusic } from "react-icons/fa";
-// import { FaMusic } from "react-icons/fa";
 import { GiGuitar, GiMusicalKeyboard } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHeadset, IoHome } from "react-icons/io5";
@@ -44,9 +43,9 @@ function Home() {
             >
               Home
             </Link>
-            <a href="#" className="text-white text-xl">
+            <Link to="../profile" className="text-white text-xl">
               Perfil
-            </a>
+            </Link>
             <div
               className="lg:flex items-center gap-1 md:hidden"
               onClick={showFirstModal}
@@ -90,12 +89,12 @@ function Home() {
                   >
                     Rap
                   </Link>
-                  <a
-                    href="#"
+                  <Link
+                    to="../brasilian"
                     className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                   >
                     Brasileira
-                  </a>
+                  </Link>
                 </div>
               </div>
             </Modal>
@@ -138,10 +137,10 @@ function Home() {
             </div>
           </div>
           <div className="mt-7">
-            <a href="#" className=" flex items-center gap-5">
+            <Link to="../profile" className=" flex items-center gap-5">
               <CgProfile className="text-white text-5xl" />
               <p className="text-white font-semibold text-3xl">Perfil</p>
-            </a>
+            </Link>
           </div>
         </Modal>
         {/* Menu - End */}
@@ -213,12 +212,12 @@ function Home() {
 
                     {/* BR - Start */}
                     <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                      <a href="#">
+                      <Link to="../brasilian">
                         <div className="flex justify-center">
                           <LiaDrumSolid className="text-white text-6xl active:text-black" />
                         </div>
                         <p className="font-bold text-lg">Brasileira</p>
-                      </a>
+                      </Link>
                     </div>
                     {/* BR - End */}
                   </div>

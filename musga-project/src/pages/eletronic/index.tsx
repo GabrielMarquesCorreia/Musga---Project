@@ -20,7 +20,7 @@ function Eletronic() {
   return (
     <div>
       {/* Header - Inicio */}
-      <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
+      <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-10 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
         <div className="flex items-center md:hidden">
           <button onClick={showSecondModal}>
             <UnorderedListOutlined className="text-5xl font-bold" />
@@ -38,9 +38,9 @@ function Eletronic() {
           <Link to="../home" className="text-white text-xl">
             Home
           </Link>
-          <a href="#" className="text-white text-xl">
+          <Link to="../profile" className="text-white text-xl">
             Perfil
-          </a>
+          </Link>
           <div
             className="lg:flex items-center gap-1 md:hidden"
             onClick={showFirstModal}
@@ -84,12 +84,12 @@ function Eletronic() {
                 >
                   Rap
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="../brasilian"
                   className="text-2xl font-bold flex justify-center items-center text-center active:bg-white"
                 >
                   Brasileira
-                </a>
+                </Link>
               </div>
             </div>
           </Modal>
@@ -129,10 +129,10 @@ function Eletronic() {
           </div>
         </div>
         <div className="mt-7">
-          <a href="#" className=" flex items-center gap-5">
+          <Link to="../profile" className=" flex items-center gap-5">
             <CgProfile className="text-white text-5xl" />
             <p className="text-white font-semibold text-3xl">Perfil</p>
-          </a>
+          </Link>
         </div>
       </Modal>
       {/* Menu - End */}
@@ -204,12 +204,12 @@ function Eletronic() {
 
                   {/* BR - Start */}
                   <div className="bg-gray8 border-white border-solid border-[4.1px] h-24 w-24 text-center active:bg-white active:border-black active:text-black">
-                    <a href="#">
+                    <Link to="../brasilian">
                       <div className="flex justify-center">
                         <LiaDrumSolid className="text-white text-6xl active:text-black" />
                       </div>
                       <p className="font-bold text-lg">Brasileira</p>
-                    </a>
+                    </Link>
                   </div>
                   {/* BR - End */}
                 </div>
