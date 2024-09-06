@@ -1,16 +1,18 @@
 import { UnorderedListOutlined, SearchOutlined } from "@ant-design/icons";
 import { Modal, Input } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaMusic } from "react-icons/fa";
 import { GoPencil } from "react-icons/go";
-import { IoIosArrowDown } from "react-icons/io";
 import { IoClose, IoHome } from "react-icons/io5";
 import { MdImage, MdKeyboardArrowDown } from "react-icons/md";
 import { RiUserLine } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
+import { useUserContext } from "../../UserContext";
+import { IoIosArrowDown } from "react-icons/io";
 
 function Profile() {
+  // Modal
   const [isFirstModalVisible, setIsFirstModalVisible] = useState(false);
   const [isSecondModalVisible, setIsSecondModalVisible] = useState(false);
 
@@ -18,37 +20,78 @@ function Profile() {
   const hideFirstModal = () => setIsFirstModalVisible(false);
   const showSecondModal = () => setIsSecondModalVisible(true);
   const hideSecondModal = () => setIsSecondModalVisible(false);
+  // Modall
 
-  const { userId } = useParams();
+  // Name and image
+  const { userId } = useParams<string>();
+  const { users, setUserName, setProfileImage } = useUserContext();
+  const user = users.find((user) => user.id === userId);
+  const [localName, setLocalName] = useState(user?.name || "");
+  const [selectedImage, setSelectedImage] = useState<
+    string | ArrayBuffer | null
+  >(user?.profileImage || "");
 
-  // Variables -
-  let profileName, profileImg;
-  // - Variables
+  useEffect(() => {
+    if (user) {
+      setLocalName(user.name);
+      setSelectedImage(user.profileImage); // Atualiza a imagem selecionada se o usuário for encontrado
+    }
+  }, [userId, user]);
 
-  // First User -
-  if (userId === "1") {
-    (profileName = "Usuário 1"),
-      (profileImg = "./../../../public/images/jake.jpg");
-  }
-  // - First User
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const imageUrl = reader.result as string;
+        setSelectedImage(imageUrl);
+        if (userId) {
+          setProfileImage(userId, imageUrl);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
-  // Second User -
-  if (userId === "2") {
-    (profileName = "Usuário 2"),
-      (profileImg = "./../../../public/images/luffy.jpg");
-  }
-  // - Second User
+  const nomeInicial = (userId: string | undefined) => {
+    switch (userId) {
+      case "1":
+        return "Usuário 1";
+      case "2":
+        return "Usuário 2";
+      case "3":
+        return "Usuário 3";
+      default:
+        return "Usuário";
+    }
+  };
+  // Name and image
 
-  // Third User -
-  if (userId === "3") {
-    (profileName = "Gabriel"),
-      (profileImg = "./../../../public/images/astronauta.jpg");
-  }
-  // - Third User
+  // Save
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocalName(event.target.value);
+  };
+
+  const handleSave = () => {
+    if (userId) {
+      setUserName(userId, localName);
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSave();
+    }
+  };
+
+  const handleBlur = () => {
+    handleSave();
+  };
+  // Save
 
   return (
     <div>
-      {/* Header - Inicio */}
+      {/* Header */}
       <header className="w-full h-16 bg-bgBlack flex items-center justify-end p-4 gap-24 md:gap-12 lg:gap-32 xl:gap-52 xxl:gap-19">
         <div className="flex items-center md:hidden">
           <button onClick={showSecondModal}>
@@ -60,7 +103,7 @@ function Profile() {
           <img
             src="../public/images/logo.png"
             alt="Logo"
-            className="w-40 md:w-52 xl:w-40 flex "
+            className="w-40 md:w-52 xl:w-40 flex"
           />
         </div>
         <div className="sm:hidden md:flex gap-5 items-center xl:gap-8 cursor-pointer">
@@ -137,7 +180,7 @@ function Profile() {
         </div>
       </header>
 
-      {/* Menu - Start */}
+      {/* Menu */}
       <Modal
         visible={isSecondModalVisible}
         onCancel={hideSecondModal}
@@ -154,7 +197,7 @@ function Profile() {
             />
           </div>
           <div className="mt-7">
-            <Link to="../home" className=" flex items-center gap-5">
+            <Link to="../home" className="flex items-center gap-5">
               <IoHome className="text-white text-5xl" />
               <p className="text-white font-semibold text-3xl">Home</p>
             </Link>
@@ -170,27 +213,41 @@ function Profile() {
           </div>
         </div>
       </Modal>
-      {/* Menu - End */}
-      {/* Header - Fim */}
 
-      {/* Content - Inicio */}
-      <div className="pr-12 pl-12 p-4">
-        {/* Profile Start */}
+      {/* Content */}
+      <div className="pr-12 pl-12 p-4 pt-5">
+        {/* Profile */}
         <div className="bg-none flex flex-col items-center justify-center">
-          <img src={profileImg} alt="profile" className="w-36" />
-          <div className="border-b-2 flex w-full justify-between">
-            <input
-              className="w-64 text-white text-2xl mt-2 font-semibold bg-transparent mb-2 placeholder:text-white"
-              placeholder={profileName}
+          <div className="relative">
+            <img
+              src={selectedImage as string}
+              alt="profile"
+              className="w-40 cursor-pointer border-white border-solid border-[1px] rounded-full"
+              onClick={() => document.getElementById("fileInput")?.click()}
             />
-            <button>
-              <GoPencil className="text-2xl mt-2" />
-            </button>
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={handleImageChange}
+            />
+          </div>
+          <div className="border-b-2 flex w-full justify-between relative">
+            <input
+              type="text"
+              value={localName}
+              placeholder={nomeInicial(userId)}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+              onBlur={handleBlur}
+              className="w-64 text-white text-2xl mt-3 font-semibold bg-transparent mb-2 placeholder:text-white"
+            />
+            <GoPencil className="text-2xl mt-5" />
           </div>
         </div>
-        {/* Profile End */}
 
-        {/* Change Profile - Start */}
+        {/* Change Profile */}
         <Link
           to="/"
           className="border-4 w-full h-14 mt-8 p-1 pr-3 pl-3 flex items-center text-center gap-5 justify-center"
@@ -198,25 +255,33 @@ function Profile() {
           <RiUserLine className="text-white text-4xl" />
           <p className="font-semibold text-2xl">Mudar de Conta</p>
         </Link>
-        {/* Change Profile - End */}
 
-        {/* Change Backgroun - Start */}
+        {/* Change Background */}
         <button className="border-b-2 flex w-full justify-between mt-8">
-          <p className="font-semibold text-2xl mb-2">Editar Backgorund</p>
+          <p className="font-semibold text-2xl mb-2">Editar Background</p>
           <MdImage className="text-4xl mb-1" />
         </button>
-        {/* Change Backgroun - End */}
 
-        {/* Favorite Gender - Start */}
-        <div className="mt-8 bg-transparent border-b-2 w-full">
+        {/* Favorite Gender */}
+        <div className="mt-6 bg-transparent border-b-2 w-full">
+          <p className="text-2xl font-bold mb-3">Gênero favorito:</p>
           <button className="flex justify-between w-full">
-              <p className="text-2xl font-semibold mb-2">Selecione um gênero</p>
-              <MdKeyboardArrowDown className="text-4xl" />
+            <p className="text-lg font-semibold mb-2">Selecione um gênero</p>
+            <MdKeyboardArrowDown className="text-4xl" />
           </button>
         </div>
-        {/* Favorite Gender - End */}
+
+        {/* Favorite Artist or Band */}
+        <div className="mt-5 mb-[15px] bg-transparent border-b-2 w-full">
+          <p className="text-2xl font-bold mb-3">Artista ou banda favorito:</p>
+          <button className="flex justify-between w-full">
+            <p className="text-lg font-semibold">
+              Selecione um artista ou banda
+            </p>
+            <MdKeyboardArrowDown className="text-4xl" />
+          </button>
+        </div>
       </div>
-      {/* Content - End */}
     </div>
   );
 }

@@ -17,6 +17,8 @@ function Pop() {
   const showSecondModal = () => setIsSecondModalVisible(true);
   const hideSecondModal = () => setIsSecondModalVisible(false);
 
+  const userId = localStorage.getItem("selectedUserId");
+
   return (
     <div>
       {/* Header - Inicio */}
@@ -38,7 +40,7 @@ function Pop() {
           <Link to="../home" className="text-white text-xl">
             Home
           </Link>
-          <Link to="../profile" className="text-white text-xl">
+          <Link to={`../profile/${userId}`} className="text-white text-xl">
             Perfil
           </Link>
           <div
@@ -131,7 +133,10 @@ function Pop() {
               </div>
             </div>
             <div className="mt-7">
-              <Link to="../profile" className=" flex items-center gap-5">
+              <Link
+                to={`../profile/${userId}`}
+                className=" flex items-center gap-5"
+              >
                 <CgProfile className="text-white text-5xl" />
                 <p className="text-white font-semibold text-3xl">Perfil</p>
               </Link>

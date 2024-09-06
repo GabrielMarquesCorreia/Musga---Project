@@ -1,17 +1,37 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useUserContext } from "../../UserContext/index.tsx";
+import { useEffect } from "react";
 
 function Login() {
+  const { users } = useUserContext();
+
+  const handleProfileClick = (userId: string) => {
+    localStorage.setItem("selectedUserId", userId);
+  };
+
+  // Function to get the user name based on userId from context
+  const getUserName = (userId: string) => {
+    const user = users.find((user) => user.id === userId);
+    return user ? user.name : `Usuário ${userId}`;
+  };
+
+  // Function to get the user profile image based on userId from context
+  const getProfileImage = (userId: string) => {
+    const user = users.find((user) => user.id === userId);
+    return user ? user.profileImage : "/images/default.jpg"; // Use profileImage from context
+  };
+
+  useEffect(() => {
+    console.log("Users from context in Login: ", users);
+  }, [users]);
+
   return (
     <div>
       <div className="bg-black h-screen bg-opacity-35 md:bg-opacity-55 p-5">
         {/* Header - Inicio */}
         <div className="flex justify-center">
-          <img
-            src="../public/images/logo.png"
-            alt="Logo"
-            className="md:w-80 xl:w-96"
-          />
+          <img src="/images/logo.png" alt="Logo" className="md:w-80 xl:w-96" />
         </div>
         {/* Header - Fim */}
 
@@ -24,42 +44,28 @@ function Login() {
           </div>
 
           <div className="grid grid-cols-2 pt-10 gap-12 md:gap-7 lg:gap-14 xl:gap-16 md:flex">
-            <div className="col-span-1 m-0">
-              <Link className="text-center" to="../profile/1">
-                <img
-                  src="../public/images/jake.jpg"
-                  alt="Profile-1"
-                  className="mb-5 border-white border-solid border-[1px] rounded-full md:w-40 md:h-40 xl:w-52 xl:h-52 focus:bg-black"
-                />
-                <p className="font-semibold text-2xl xl:text-4xl">Profile 1</p>
-              </Link>
-            </div>
-
-            <div className="col-span-1 m-0">
-              <Link className="text-center" to="../profile/2">
-                <img
-                  src="../public/images/luffy.jpg"
-                  alt="Profile-1"
-                  className="mb-5 border-white border-solid border-[1px] rounded-full md:w-40 md:h-40 xl:w-52 xl:h-52"
-                />
-                <p className="font-semibold text-2xl xl:text-4xl">Profile 2</p>
-              </Link>
-            </div>
-
-            <div className="col-span-1 m-0">
-              <Link className="text-center" to="../profile/3">
-                <img
-                  src="../public/images/astronauta.jpg"
-                  alt="Profile-1"
-                  className="mb-5 border-white border-solid border-[1px] rounded-full md:w-40 md:h-40 xl:w-52 xl:h-52"
-                />
-                <p className="font-semibold text-2xl xl:text-4xl">Profile 3</p>
-              </Link>
-            </div>
+            {[1, 2, 3].map((id) => (
+              <div key={id} className="col-span-1 m-0">
+                <Link
+                  className="text-center"
+                  to={`../profile/${id}`}
+                  onClick={() => handleProfileClick(id.toString())}
+                >
+                  <img
+                    src={getProfileImage(id.toString())}
+                    alt={`Profile-${id}`}
+                    className="mb-5 border-white border-solid border-[1px] rounded-full md:w-40 md:h-40 xl:w-52 xl:h-52"
+                  />
+                  <p className="font-semibold text-2xl xl:text-4xl">
+                    {getUserName(id.toString())}
+                  </p>
+                </Link>
+              </div>
+            ))}
 
             <div className="col-span-1 m-0">
               <Link className="text-center" to="../home">
-                <div className="mb-5 border-white border-solid border-[1px] rounded-full h-36 md:h-40 items-center justify-center flex bg-gray8 md:w-40 xl:w-52 xl:h-52">
+                <div className="mb-7 border-white border-solid border-[1px] rounded-full h-36 md:h-40 items-center justify-center flex bg-gray8 md:w-40 xl:w-52 xl:h-52">
                   <PlusOutlined className="text-5xl" />
                 </div>
                 <p className="font-semibold text-2xl xl:text-4xl">Add</p>

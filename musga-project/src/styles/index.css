@@ -79,6 +79,16 @@ body {
   }
 }
 
+.profile-background {
+  /* Ajuste o tamanho e outras propriedades conforme necessário */
+  width: 100%;
+  height: 300px; /* Ajuste conforme o design */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px; /* Opcional */
+  margin-top: 20px; /* Opcional */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
