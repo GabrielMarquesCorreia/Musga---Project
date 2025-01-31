@@ -29,11 +29,6 @@ function Login() {
   return (
     <div>
       <div className="bg-black h-screen bg-opacity-35 md:bg-opacity-55 p-5">
-        {/* Header - Inicio */}
-        <div className="flex justify-center">
-          <img src="/images/logo.png" alt="Logo" className="md:w-80 xl:w-96" />
-        </div>
-        {/* Header - Fim */}
 
         {/* Content - Inicio */}
         <div className="flex flex-col pt-16 md:pt-24 xl:pt-12 justify-center items-center">
